@@ -1,0 +1,22 @@
+{
+  "source": "https://game.battlecode.au/battles/733667",
+  "observed_at": "2026-10-01",
+  "submission": 13572,
+  "bot": "Sprint v2.1 - Stable Growth",
+  "opponent": "That's That, and This is This",
+  "result": "0-5",
+  "rating_before": 1453,
+  "rating_after": 1414,
+  "games": [
+    {"id":733667,"map":"Devil","rounds":500,"reason":"longest dragon","ours":{"alive":7,"longest":6,"total_length":30,"peak_longest":14,"splits":14,"deaths":10,"self_collisions":0,"invalid_actions":0,"sprints":0,"sonar":0},"opponent":{"alive":25,"longest":25,"total_length":126,"peak_longest":26,"splits":459,"deaths":437,"self_collisions":235,"invalid_actions":0,"sprints":12,"sonar":46850}},
+    {"id":733668,"map":"Default","rounds":500,"reason":"longest dragon","ours":{"alive":3,"longest":13,"total_length":21,"peak_longest":13,"splits":2,"deaths":3,"self_collisions":0,"invalid_actions":0,"sprints":0,"sonar":0},"opponent":{"alive":31,"longest":21,"total_length":188,"peak_longest":21,"splits":62,"deaths":35,"self_collisions":15,"invalid_actions":0,"sprints":6,"sonar":45170}},
+    {"id":733669,"map":"Queen Of Spades","rounds":438,"reason":"elimination","ours":{"alive":0,"longest":0,"total_length":0,"peak_longest":12,"splits":0,"deaths":2,"self_collisions":0,"invalid_actions":0,"sprints":0,"sonar":0},"opponent":{"alive":25,"longest":4,"total_length":68,"peak_longest":4,"splits":48,"deaths":25,"self_collisions":5,"invalid_actions":0,"sprints":2,"sonar":25400}},
+    {"id":733670,"map":"Slithery Fight","rounds":500,"reason":"longest dragon","ours":{"alive":47,"longest":12,"total_length":205,"peak_longest":25,"splits":179,"deaths":139,"self_collisions":0,"invalid_actions":0,"sprints":0,"sonar":0},"opponent":{"alive":39,"longest":33,"total_length":260,"peak_longest":35,"splits":973,"deaths":941,"self_collisions":702,"invalid_actions":0,"sprints":35,"sonar":97690}},
+    {"id":733671,"map":"Prisoners Dilemma","rounds":500,"reason":"longest dragon","ours":{"alive":11,"longest":9,"total_length":47,"peak_longest":16,"splits":21,"deaths":15,"self_collisions":0,"invalid_actions":0,"sprints":0,"sonar":0},"opponent":{"alive":10,"longest":13,"total_length":67,"peak_longest":15,"splits":242,"deaths":237,"self_collisions":197,"invalid_actions":0,"sprints":22,"sonar":19750}}
+  ],
+  "observed_sequence": {
+    "match":733671,
+    "events":["Round 47: dragon 30 grows to 13","Round 48: dragon 30 splits off dragon 31 with 11 cells","Round 48: dragon 31 moves north from the former tail","Round 49: dragon 30 dies by self collision","Round 49: dragon 31 eats a pearl and grows to 12","Round 50: dragon 31 eats a pearl and grows to 13"],
+    "interpretation":"Consistent with using a split to reverse the long dragon while sacrificing the short parent. This is observed behaviour, not access to opponent source code."
+  }
+}
