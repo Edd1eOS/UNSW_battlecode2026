@@ -1,0 +1,16 @@
+{
+  "source": "https://game.battlecode.au/battles/737247",
+  "submission": 13572,
+  "bot": "Sprint v2.1 - Stable Growth",
+  "type": "Unranked",
+  "opponent": "That's That, and This is This",
+  "result": "2-3",
+  "note": "v2.2 upload was blocked by the browser file picker. This repeat used v2.1, not v2.2 or v3. Opponent submission identity was not verified; seeds differ from the first series.",
+  "games": [
+    {"id":737247,"map":"Default","result":"win","rounds":500,"longest":[15,11],"alive":[6,32],"total_length":[55,159],"peak_longest":[26,15],"splits":[5,74],"pearls_remaining":117,"seed":"0xc616a4bb7614aaaf"},
+    {"id":737248,"map":"Devil","result":"loss","rounds":500,"longest":[7,10],"alive":[2,34],"total_length":[11,174],"peak_longest":[18,21],"splits":[4,695],"pearls_remaining":18,"seed":"0xd0f0ed58d687abe2"},
+    {"id":737249,"map":"Prisoners Dilemma","result":"win","rounds":500,"longest":[16,14],"alive":[10,4],"total_length":[69,41],"peak_longest":[16,17],"splits":[12,253],"pearls_remaining":9,"seed":"0xec857c05b7609355"},
+    {"id":737250,"map":"Queen Of Spades","result":"loss","rounds":500,"longest":[8,9],"alive":[1,21],"total_length":[8,65],"peak_longest":[8,9],"splits":[0,39],"pearls_remaining":113,"seed":"0x8117ab4653911f89"},
+    {"id":737251,"map":"Slithery Fight","result":"loss","rounds":500,"longest":[8,24],"alive":[34,57],"total_length":[154,284],"peak_longest":[25,25],"splits":[121,1118],"pearls_remaining":99,"seed":"0x55cfb9cfcbd4cf9c"}
+  ]
+}
