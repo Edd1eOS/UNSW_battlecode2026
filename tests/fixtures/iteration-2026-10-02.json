@@ -1,0 +1,1319 @@
+{
+  "started_utc": "2026-10-02T12:38:48Z",
+  "deadline_utc": "2026-10-02T14:38:48Z",
+  "local": [
+    {
+      "name": "current-v4-v3",
+      "candidate": "opponents/v4",
+      "opponent": "opponents/v3",
+      "candidate_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "opponent_hash": "673bf070eab8cf8afa4bd6ac5573e6ae90f20bc36b8c036bae989c7626c4cae2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "devil",
+        "portals",
+        "queen_of_spades",
+        "trophy"
+      ],
+      "seeds": [
+        211
+      ],
+      "counts": {
+        "win": 8,
+        "loss": 2,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 15900000.0
+    },
+    {
+      "name": "forage-v6-v4",
+      "candidate": "bot",
+      "opponent": "opponents/v4",
+      "candidate_hash": "9b056b20995b4cfe1c30ec78a566e987aa9564665d78e3b951e1551cd21ea500",
+      "opponent_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "devil",
+        "portals",
+        "queen_of_spades",
+        "trophy"
+      ],
+      "seeds": [
+        211
+      ],
+      "counts": {
+        "win": 6,
+        "loss": 4,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 42100000.0
+    },
+    {
+      "name": "forage-v6h-v4",
+      "candidate": "bot",
+      "opponent": "opponents/v4",
+      "candidate_hash": "18f2d773ac90196dd48ed18cfadeda62212b16524a5d73d44b6f24ec4decebfe",
+      "opponent_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "devil",
+        "portals",
+        "queen_of_spades",
+        "trophy"
+      ],
+      "seeds": [
+        313
+      ],
+      "counts": {
+        "win": 5,
+        "loss": 5,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 37800000.0
+    },
+    {
+      "name": "v10-champion-v8",
+      "candidate": "bot",
+      "opponent": "opponents/v8-frontier",
+      "candidate_hash": "a83041aef84720ee238d97d814b8bf9c0495b8eebf89fd0f88a81ba06588d065",
+      "opponent_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        1151
+      ],
+      "counts": {
+        "win": 9,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53200000.0
+    },
+    {
+      "name": "v11-queen-evasion-v8",
+      "candidate": "bot",
+      "opponent": "opponents/v8-frontier",
+      "candidate_hash": "76dcabd26855acfe350af7325670ad157d5b436da88c312e419a942f829e950e",
+      "opponent_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        1277
+      ],
+      "counts": {
+        "win": 7,
+        "loss": 9,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 98000000.0
+    },
+    {
+      "name": "v12-allmaps-holdout",
+      "candidate": "opponents/v12-early-expansion",
+      "opponent": "opponents/v8-frontier",
+      "candidate_hash": "f2327879999f119c323d0eade1608e71a706a26c5589055f14b79de5340498e6",
+      "opponent_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "Colosseum",
+        "arena",
+        "australia",
+        "autarky",
+        "default",
+        "default_small",
+        "devil",
+        "dilemma",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "schooltime",
+        "slithery_fight",
+        "stripes",
+        "stronghold",
+        "tower_defense",
+        "trauma",
+        "trophy",
+        "unsw",
+        "weakhold"
+      ],
+      "seeds": [
+        1423
+      ],
+      "counts": {
+        "win": 28,
+        "loss": 13,
+        "draw": 1,
+        "error": 0
+      },
+      "peak_points": 51700000.0
+    },
+    {
+      "name": "v12-early-expansion-v8",
+      "candidate": "bot",
+      "opponent": "opponents/v8-frontier",
+      "candidate_hash": "f2327879999f119c323d0eade1608e71a706a26c5589055f14b79de5340498e6",
+      "opponent_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        1277
+      ],
+      "counts": {
+        "win": 11,
+        "loss": 5,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53700000.0
+    },
+    {
+      "name": "v13-grow-before-attack-v8",
+      "candidate": "bot",
+      "opponent": "opponents/v8-frontier",
+      "candidate_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "opponent_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        1277
+      ],
+      "counts": {
+        "win": 12,
+        "loss": 4,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53700000.0
+    },
+    {
+      "name": "v13-pressure",
+      "candidate": "opponents/v13-expansion",
+      "opponent": "opponents/pressure",
+      "candidate_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "opponent_hash": "3f04cc2a810085f3daf935e1d89e367aad73a114456b7fe7f95cc169e526e906",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy"
+      ],
+      "seeds": [
+        2677
+      ],
+      "counts": {
+        "win": 5,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 35000000.0
+    },
+    {
+      "name": "v13-v12-holdout",
+      "candidate": "opponents/v13-expansion",
+      "opponent": "opponents/v12-early-expansion",
+      "candidate_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "opponent_hash": "f2327879999f119c323d0eade1608e71a706a26c5589055f14b79de5340498e6",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        1619
+      ],
+      "counts": {
+        "win": 8,
+        "loss": 8,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 56200000.0
+    },
+    {
+      "name": "v14-preserve-growth-v13",
+      "candidate": "bot",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "30f297f08e72c2bf090b6fa0c71a5641cd270304dccde3911549824addcf8c98",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        1559
+      ],
+      "counts": {
+        "win": 8,
+        "loss": 8,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 55200000.0
+    },
+    {
+      "name": "v15-allmaps-v13",
+      "candidate": "opponents/v15-queen-risk",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "32e60a3b23619b34d886445dbf867d9a1f95975b784abd5a1589a1a9cfa262da",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "Colosseum",
+        "arena",
+        "australia",
+        "autarky",
+        "default",
+        "default_small",
+        "devil",
+        "dilemma",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "schooltime",
+        "slithery_fight",
+        "stripes",
+        "stronghold",
+        "tower_defense",
+        "trauma",
+        "trophy",
+        "unsw",
+        "weakhold"
+      ],
+      "seeds": [
+        1877
+      ],
+      "counts": {
+        "win": 23,
+        "loss": 19,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53900000.0
+    },
+    {
+      "name": "v15-queen-risk-v13",
+      "candidate": "bot",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "32e60a3b23619b34d886445dbf867d9a1f95975b784abd5a1589a1a9cfa262da",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy"
+      ],
+      "seeds": [
+        1693
+      ],
+      "counts": {
+        "win": 7,
+        "loss": 5,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 29100000.0
+    },
+    {
+      "name": "v16-split-threat-v13",
+      "candidate": "bot",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "df46a4d1e0a9e49f1cd4bf68a7cc85a026b2cdda9dd6d2ba156f96eca374a770",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy"
+      ],
+      "seeds": [
+        1777
+      ],
+      "counts": {
+        "win": 5,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 34000000.0
+    },
+    {
+      "name": "v17-pressure",
+      "candidate": "opponents/v17-worker-trades",
+      "opponent": "opponents/pressure",
+      "candidate_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "opponent_hash": "3f04cc2a810085f3daf935e1d89e367aad73a114456b7fe7f95cc169e526e906",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy"
+      ],
+      "seeds": [
+        2677
+      ],
+      "counts": {
+        "win": 7,
+        "loss": 5,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 35000000.0
+    },
+    {
+      "name": "v17-trades-holdout",
+      "candidate": "opponents/v17-worker-trades",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "schooltime",
+        "stripes",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2251
+      ],
+      "counts": {
+        "win": 15,
+        "loss": 5,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 56200000.0
+    },
+    {
+      "name": "v17-worker-trades-v13",
+      "candidate": "bot",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        1993
+      ],
+      "counts": {
+        "win": 10,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 52600000.0
+    },
+    {
+      "name": "v18-turn-order-v13",
+      "candidate": "bot",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "e32032a58a735b04d9162f5aea1faf4a8d97f6a5b113b83e4c676f73ca48d7ad",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2111
+      ],
+      "counts": {
+        "win": 5,
+        "loss": 11,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53000000.0
+    },
+    {
+      "name": "v19-enemy-turn-threats-v13",
+      "candidate": "bot",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "2b3bfe3d5d79c60a624c72c2913123c1c8ea7840911822eb27746a95e06de916",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2111
+      ],
+      "counts": {
+        "win": 10,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 46900000.0
+    },
+    {
+      "name": "v20-combined-v17",
+      "candidate": "bot",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "b06d61518c948230d14e72c5f88e3c8641d768566278afe64afdda71eda46670",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2357
+      ],
+      "counts": {
+        "win": 7,
+        "loss": 9,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 56500000.0
+    },
+    {
+      "name": "v20-pressure",
+      "candidate": "opponents/v20-combined",
+      "opponent": "opponents/pressure",
+      "candidate_hash": "b06d61518c948230d14e72c5f88e3c8641d768566278afe64afdda71eda46670",
+      "opponent_hash": "3f04cc2a810085f3daf935e1d89e367aad73a114456b7fe7f95cc169e526e906",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy"
+      ],
+      "seeds": [
+        2677
+      ],
+      "counts": {
+        "win": 5,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 35700000.0
+    },
+    {
+      "name": "v20-ranked-maps-v13",
+      "candidate": "opponents/v20-combined",
+      "opponent": "opponents/v13-expansion",
+      "candidate_hash": "b06d61518c948230d14e72c5f88e3c8641d768566278afe64afdda71eda46670",
+      "opponent_hash": "0deb1e6869932dea0971b6d0116de3597925af83328e9b35b6c40dd352876069",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "autarky",
+        "default",
+        "devil",
+        "dilemma",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "schooltime",
+        "slithery_fight",
+        "stripes",
+        "tower_defense",
+        "trauma",
+        "trophy",
+        "unsw",
+        "weakhold"
+      ],
+      "seeds": [
+        2477
+      ],
+      "counts": {
+        "win": 20,
+        "loss": 14,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 56400000.0
+    },
+    {
+      "name": "v21-rebuild-army-v17",
+      "candidate": "bot",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "c5788b26ad0c4cf73f58e477fc13b26334b435fa328d38571b486e3b8337bc90",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2591
+      ],
+      "counts": {
+        "win": 8,
+        "loss": 8,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53600000.0
+    },
+    {
+      "name": "v22-risk-holdout-v17",
+      "candidate": "opponents/v22-value-aware-risk",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "0d2d31036b5d16ee343f2104bff03ab377f2f2569005b2998711ef7e6dcb3f2a",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        3037
+      ],
+      "counts": {
+        "win": 9,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53200000.0
+    },
+    {
+      "name": "v22-value-aware-risk-v20",
+      "candidate": "bot",
+      "opponent": "opponents/v20-combined",
+      "candidate_hash": "0d2d31036b5d16ee343f2104bff03ab377f2f2569005b2998711ef7e6dcb3f2a",
+      "opponent_hash": "b06d61518c948230d14e72c5f88e3c8641d768566278afe64afdda71eda46670",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2731
+      ],
+      "counts": {
+        "win": 10,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 56000000.0
+    },
+    {
+      "name": "v23-feasible-threats-v20",
+      "candidate": "bot",
+      "opponent": "opponents/v20-combined",
+      "candidate_hash": "01f8e5fb18e92a072ea8a09c11b5908ddca2b57ba1950800d507a9d57e9142ab",
+      "opponent_hash": "b06d61518c948230d14e72c5f88e3c8641d768566278afe64afdda71eda46670",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2857
+      ],
+      "counts": {
+        "win": 7,
+        "loss": 9,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 54700000.0
+    },
+    {
+      "name": "v24-queen-founder-v17",
+      "candidate": "bot",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "d5f7b39547623ca1edda9789daa7a3ee6bd882e28fc6d93f88755bf3254d1bc2",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        2957
+      ],
+      "counts": {
+        "win": 10,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 55900000.0
+    },
+    {
+      "name": "v25-early-founder-v17",
+      "candidate": "opponents/v25-early-founder",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "ec4c7c233374e881f9a9edcdb8740f3855758edf65e1f373c2fedefa8f1b2a44",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        3167
+      ],
+      "counts": {
+        "win": 8,
+        "loss": 8,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 52000000.0
+    },
+    {
+      "name": "v26-food-first-v17",
+      "candidate": "opponents/v26-food-first",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "f575ac7d4279a958a386c0bef1c20e4d39c2ee6a7aea2e9c1c7468edb17afbc7",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        3167
+      ],
+      "counts": {
+        "win": 9,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53700000.0
+    },
+    {
+      "name": "v27-portal-scout-v17",
+      "candidate": "bot",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "89d7f26ba0123eca19938b39869703edd13fa6363d43b295ee7e8fbcab131f68",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "trauma",
+        "trophy"
+      ],
+      "seeds": [
+        3299
+      ],
+      "counts": {
+        "win": 9,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 53600000.0
+    },
+    {
+      "name": "v27-portals-holdout",
+      "candidate": "opponents/v27-portal-scout",
+      "opponent": "opponents/v17-worker-trades",
+      "candidate_hash": "89d7f26ba0123eca19938b39869703edd13fa6363d43b295ee7e8fbcab131f68",
+      "opponent_hash": "8dd37438913da98ccabf3bc62bbcb27853e9f7014db259b33c1551ad3934d51a",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "default",
+        "devil",
+        "islands",
+        "maze",
+        "portals",
+        "queen_of_spades"
+      ],
+      "seeds": [
+        3433
+      ],
+      "counts": {
+        "win": 6,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 41500000.0
+    },
+    {
+      "name": "v4-v3-holdout",
+      "candidate": "opponents/v4",
+      "opponent": "opponents/v3",
+      "candidate_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "opponent_hash": "673bf070eab8cf8afa4bd6ac5573e6ae90f20bc36b8c036bae989c7626c4cae2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "devil",
+        "dilemma",
+        "portals",
+        "queen_of_spades",
+        "slithery_fight",
+        "trophy"
+      ],
+      "seeds": [
+        419
+      ],
+      "counts": {
+        "win": 10,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 15700000.0
+    },
+    {
+      "name": "v6h-v3-holdout",
+      "candidate": "opponents/v6-hybrid",
+      "opponent": "opponents/v3",
+      "candidate_hash": "18f2d773ac90196dd48ed18cfadeda62212b16524a5d73d44b6f24ec4decebfe",
+      "opponent_hash": "673bf070eab8cf8afa4bd6ac5573e6ae90f20bc36b8c036bae989c7626c4cae2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "devil",
+        "dilemma",
+        "portals",
+        "queen_of_spades",
+        "slithery_fight",
+        "trophy"
+      ],
+      "seeds": [
+        419
+      ],
+      "counts": {
+        "win": 9,
+        "loss": 7,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 40300000.0
+    },
+    {
+      "name": "v7-v4",
+      "candidate": "bot",
+      "opponent": "opponents/v4",
+      "candidate_hash": "a729c5cabe6bcf01118bac6c7d2d3977814b8991748b1b02cda74b1cc6649d7e",
+      "opponent_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "devil",
+        "portals",
+        "queen_of_spades",
+        "trophy"
+      ],
+      "seeds": [
+        503
+      ],
+      "counts": {
+        "win": 7,
+        "loss": 3,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 47600000.0
+    },
+    {
+      "name": "v7-v4-validation",
+      "candidate": "opponents/v7-tactical",
+      "opponent": "opponents/v4",
+      "candidate_hash": "a729c5cabe6bcf01118bac6c7d2d3977814b8991748b1b02cda74b1cc6649d7e",
+      "opponent_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "devil",
+        "dilemma",
+        "portals",
+        "queen_of_spades",
+        "slithery_fight",
+        "trophy"
+      ],
+      "seeds": [
+        607,
+        719
+      ],
+      "counts": {
+        "win": 21,
+        "loss": 11,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 46600000.0
+    },
+    {
+      "name": "v8-frontier-v4",
+      "candidate": "bot",
+      "opponent": "opponents/v4",
+      "candidate_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "opponent_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "autarky",
+        "maze",
+        "queen_of_spades",
+        "stripes",
+        "trophy"
+      ],
+      "seeds": [
+        823
+      ],
+      "counts": {
+        "win": 11,
+        "loss": 1,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 52200000.0
+    },
+    {
+      "name": "v8-v7-holdout",
+      "candidate": "opponents/v8-frontier",
+      "opponent": "opponents/v7-tactical",
+      "candidate_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "opponent_hash": "a729c5cabe6bcf01118bac6c7d2d3977814b8991748b1b02cda74b1cc6649d7e",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        929
+      ],
+      "counts": {
+        "win": 12,
+        "loss": 4,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 54500000.0
+    },
+    {
+      "name": "v9-queen-goals-v8",
+      "candidate": "bot",
+      "opponent": "opponents/v8-frontier",
+      "candidate_hash": "c781e9ac04d0b2555f50cfd2d47d7a153810e9c3fdbd2491f76b11e36b38e72e",
+      "opponent_hash": "07a34fc8439d37052b39d8a4b7ac7b64c55eb35f9a996c28761f8d5602a4d332",
+      "engine": "1.2.7",
+      "map_dir": "maps/current",
+      "maps": [
+        "australia",
+        "default",
+        "maze",
+        "portals",
+        "queen_of_spades",
+        "stripes",
+        "trophy",
+        "weakhold"
+      ],
+      "seeds": [
+        1031
+      ],
+      "counts": {
+        "win": 10,
+        "loss": 6,
+        "draw": 0,
+        "error": 0
+      },
+      "peak_points": 58300000.0
+    }
+  ],
+  "online": [
+    {
+      "version": "v4",
+      "submission": 14949,
+      "manual_series": [
+        {
+          "battle": 881583,
+          "opponent": "Deep Sea Dragons",
+          "wins": 1,
+          "losses": 4
+        },
+        {
+          "battle": 881645,
+          "opponent": "NUSW Battlecode",
+          "wins": 1,
+          "losses": 4
+        }
+      ]
+    },
+    {
+      "version": "v8",
+      "submission": 14955,
+      "manual_series": [
+        {
+          "battle": 882110,
+          "opponent": "Deep Sea Dragons",
+          "wins": 0,
+          "losses": 5
+        },
+        {
+          "battle": 882115,
+          "opponent": "NUSW Battlecode",
+          "wins": 1,
+          "losses": 4
+        },
+        {
+          "battle": 882998,
+          "opponent": "BambooCode",
+          "wins": 2,
+          "losses": 3
+        }
+      ]
+    },
+    {
+      "version": "v13",
+      "submission": 14974,
+      "manual_series": [
+        {
+          "battle": 883602,
+          "opponent": "NUSW Battlecode",
+          "wins": 2,
+          "losses": 3
+        },
+        {
+          "battle": 883668,
+          "opponent": "Deep Sea Dragons",
+          "wins": 3,
+          "losses": 2
+        },
+        {
+          "battle": 883688,
+          "opponent": "BambooCode",
+          "wins": 3,
+          "losses": 2
+        },
+        {
+          "battle": 883932,
+          "opponent": "Preyas",
+          "wins": 2,
+          "losses": 3
+        },
+        {
+          "battle": 884074,
+          "opponent": "EternalWisdom",
+          "wins": 2,
+          "losses": 3
+        },
+        {
+          "battle": 884279,
+          "opponent": "Outsider Traders",
+          "wins": 4,
+          "losses": 1
+        },
+        {
+          "battle": 884497,
+          "opponent": "DIETCODE",
+          "wins": 2,
+          "losses": 3
+        }
+      ]
+    },
+    {
+      "version": "v17",
+      "submission": 14989,
+      "manual_series": [
+        {
+          "battle": 885480,
+          "opponent": "Deep Sea Dragons",
+          "wins": 2,
+          "losses": 3
+        },
+        {
+          "battle": 885626,
+          "opponent": "NUSW Battlecode",
+          "wins": 2,
+          "losses": 3
+        },
+        {
+          "battle": 886312,
+          "opponent": "BambooCode",
+          "wins": 1,
+          "losses": 4
+        },
+        {
+          "battle": 886354,
+          "opponent": "EternalWisdom",
+          "wins": 3,
+          "losses": 2
+        }
+      ],
+      "all_platform_games": 30,
+      "all_platform_wins": 14,
+      "all_platform_losses": 16,
+      "final_active_rating": 1449
+    },
+    {
+      "version": "v27",
+      "platform_version": 8,
+      "submission": 15014,
+      "manual_series": [
+        {
+          "battle": 887708,
+          "opponent": "Deep Sea Dragons",
+          "wins": 1,
+          "losses": 4
+        },
+        {
+          "battle": 887791,
+          "opponent": "NUSW Battlecode",
+          "wins": 3,
+          "losses": 2
+        },
+        {
+          "battle": 887841,
+          "opponent": "BambooCode",
+          "wins": 4,
+          "losses": 1
+        },
+        {
+          "battle": 887892,
+          "opponent": "EternalWisdom",
+          "wins": 1,
+          "losses": 4
+        },
+        {
+          "battle": 887985,
+          "opponent": "Preyas",
+          "wins": 1,
+          "losses": 4
+        },
+        {
+          "battle": 888016,
+          "opponent": "DIET CODE",
+          "wins": 3,
+          "losses": 2
+        }
+      ],
+      "all_platform_games": 35,
+      "all_platform_wins": 15,
+      "all_platform_losses": 20,
+      "final_active_rating": 1490
+    }
+  ],
+  "latest_verified_rating": 1490,
+  "notes": [
+    "Platform version numbers differ from local experiment labels.",
+    "Ranked maps are random, so different versions did not face identical online maps.",
+    "Rejected Queen planner v11 reached 98 million points; do not deploy.",
+    "Opponent strategies were inferred from public replays, not obtained source code.",
+    "v27 portal regression preserves decisions 0-17 and changes round 18 east retreat to west portal entry. Initial worker first split moves from round 35 to 19 on the recorded seed.",
+    "v27 versus v17: 15 wins / 13 losses; not evidence of a broad decisive advantage.",
+    "Pressure opponent is our synthetic stress bot, not copied NUSW source.",
+    "Early-ID enemy threat omissions remain in production; attempted fixes had mixed local results and were not deployed."
+  ],
+  "active_source_hash": "89d7f26ba0123eca19938b39869703edd13fa6363d43b295ee7e8fbcab131f68",
+  "target_rating": 1500,
+  "target_met": false,
+  "validation": {
+    "production_scenarios": "18 strategy scenarios; Queen, forage and portal prefix regression passed",
+    "official_engine_tactics": "Both enemy Queen and longer ordinary worker interception passed with v27 hash",
+    "archived_experiment": "v23 threat_model_test passed; not production",
+    "source_match": "bot and v27 snapshot byte-identical",
+    "whitespace_check": "git diff --cached --check flags inherited trailing spaces at helper.hpp:281 in archived official-helper copies; preserved for exact experiment hashes"
+  },
+  "starting_rating_approx": 1233,
+  "highest_verified_rating_so_far": 1490,
+  "verified_at_utc": "2026-10-02T14:37:50Z",
+  "target_gap": 10,
+  "outcome": "Timeboxed iteration completed; numeric 1500 target not reached. Active v27 remains at verified 1490."
+}

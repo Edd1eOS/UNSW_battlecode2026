@@ -1,0 +1,33 @@
+{
+  "source_hash": "5da786622bbe483a9b4f0ea87f95b5168f014cfeec63ed873a6a045ae3792f36",
+  "seed": 71,
+  "queen_start": 9,
+  "queen_after": 11,
+  "donor_length": 4,
+  "turns": [
+    {
+      "dragon": 0,
+      "round": 0,
+      "length": 9,
+      "output": "INDICATOR FEED_GRANT 2\nSONAR E 3556769794\nMOVE S\nPROTOCOL 3\n"
+    },
+    {
+      "dragon": 2,
+      "round": 0,
+      "length": 4,
+      "output": "INDICATOR FEED_RELEASE 2\nMOVE S\nPROTOCOL 3\n"
+    },
+    {
+      "dragon": 0,
+      "round": 1,
+      "length": 9,
+      "output": "INDICATOR FEED_PICKUP 2\nMOVE ENN\nPROTOCOL 3\n"
+    },
+    {
+      "dragon": 0,
+      "round": 2,
+      "length": 11,
+      "output": "INDICATOR FEED_RECEIPT 2\nMOVE E\nPROTOCOL 3\n"
+    }
+  ]
+}

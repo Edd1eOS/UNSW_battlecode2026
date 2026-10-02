@@ -134,7 +134,7 @@ int main() {
         f.bot.length = 8;
         assert(strategy::emergency_split_size(f.bot) == 0);
         for (auto d : Direction::get_direction_list()) f.wall({5,5}, d);
-        assert(strategy::emergency_split_size(f.bot) == 6); // Keep the long child: 2 + 6.
+        assert(strategy::emergency_split_size(f.bot) == 6); // Four permanent walls: queen cannot escape.
         f.bot.unit_count = 64;
         assert(strategy::emergency_split_size(f.bot) == 0);
         f.bot.unit_count = 1;
@@ -176,7 +176,7 @@ int main() {
         for (auto d : {Direction::NORTH, Direction::SOUTH, Direction::WEST}) f.wall({5,5},d);
         for (auto d : {Direction::NORTH, Direction::SOUTH, Direction::EAST}) f.wall({6,5},d);
         assert(strategy::emergency_split_size(f.bot) == 0); // One legal step still exists.
-        assert(strategy::choose_action(f.bot, m, 400).child_size == 8); // Avoid the dead end now.
+        assert(strategy::choose_action(f.bot, m, 400).child_size == 0); // Queen cannot transfer its score to a child.
     }
     {
         Fixture f;
