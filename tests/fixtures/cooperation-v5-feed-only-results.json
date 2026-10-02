@@ -1,0 +1,389 @@
+{
+  "candidate": "opponents/v5-feed-only",
+  "opponent": "opponents/v4",
+  "engine_version": "1.2.3",
+  "candidate_hash": "811b8ef38702e6a8dd2ca25e828bf60d3bcd1e5a2c672ea4b82d184692c06ada",
+  "opponent_hash": "32c84d51dee836a1bd354d604b9b2f855cb260311ad6154e5a18180fd658a9a2",
+  "games": [
+    {
+      "map": "default",
+      "seed": 71,
+      "side": "A",
+      "result": "loss",
+      "peak_points": 10700000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 13,
+        "b_dragons": 12,
+        "a_length": 97,
+        "b_length": 145,
+        "events": 28623,
+        "a_queen": 16,
+        "b_queen": 17,
+        "a_longest": 16,
+        "b_longest": 22
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    },
+    {
+      "map": "default",
+      "seed": 71,
+      "side": "B",
+      "result": "win",
+      "peak_points": 10700000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 13,
+        "b_dragons": 12,
+        "a_length": 97,
+        "b_length": 145,
+        "events": 28623,
+        "a_queen": 16,
+        "b_queen": 17,
+        "a_longest": 16,
+        "b_longest": 22
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    },
+    {
+      "map": "portals",
+      "seed": 71,
+      "side": "A",
+      "result": "loss",
+      "peak_points": 5900000.0,
+      "self_collisions": 1,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 2,
+        "b_dragons": 2,
+        "a_length": 11,
+        "b_length": 11,
+        "events": 19950,
+        "a_queen": 3,
+        "b_queen": 4,
+        "a_longest": 8,
+        "b_longest": 7
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 1
+    },
+    {
+      "map": "portals",
+      "seed": 71,
+      "side": "B",
+      "result": "win",
+      "peak_points": 5800000.0,
+      "self_collisions": 1,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 2,
+        "b_dragons": 2,
+        "a_length": 11,
+        "b_length": 11,
+        "events": 19950,
+        "a_queen": 3,
+        "b_queen": 4,
+        "a_longest": 8,
+        "b_longest": 7
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 1
+    },
+    {
+      "map": "dilemma",
+      "seed": 71,
+      "side": "A",
+      "result": "loss",
+      "peak_points": 6800000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 7,
+        "b_dragons": 8,
+        "a_length": 55,
+        "b_length": 59,
+        "events": 26897,
+        "a_queen": 0,
+        "b_queen": 0,
+        "a_longest": 13,
+        "b_longest": 13
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    },
+    {
+      "map": "dilemma",
+      "seed": 71,
+      "side": "B",
+      "result": "win",
+      "peak_points": 6800000.0,
+      "self_collisions": 1,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 7,
+        "b_dragons": 8,
+        "a_length": 55,
+        "b_length": 59,
+        "events": 26897,
+        "a_queen": 0,
+        "b_queen": 0,
+        "a_longest": 13,
+        "b_longest": 13
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 1
+    },
+    {
+      "map": "queen_of_spades",
+      "seed": 71,
+      "side": "A",
+      "result": "loss",
+      "peak_points": 9100000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 14,
+        "b_dragons": 7,
+        "a_length": 96,
+        "b_length": 36,
+        "events": 17727,
+        "a_queen": 0,
+        "b_queen": 9,
+        "a_longest": 16,
+        "b_longest": 9
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    },
+    {
+      "map": "queen_of_spades",
+      "seed": 71,
+      "side": "B",
+      "result": "win",
+      "peak_points": 8600000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 14,
+        "b_dragons": 7,
+        "a_length": 96,
+        "b_length": 36,
+        "events": 17727,
+        "a_queen": 0,
+        "b_queen": 9,
+        "a_longest": 16,
+        "b_longest": 9
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    },
+    {
+      "map": "slithery_fight",
+      "seed": 71,
+      "side": "A",
+      "result": "loss",
+      "peak_points": 8900000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 20,
+        "b_dragons": 18,
+        "a_length": 240,
+        "b_length": 316,
+        "events": 92889,
+        "a_queen": 0,
+        "b_queen": 0,
+        "a_longest": 37,
+        "b_longest": 57
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    },
+    {
+      "map": "slithery_fight",
+      "seed": 71,
+      "side": "B",
+      "result": "win",
+      "peak_points": 8700000.0,
+      "self_collisions": 0,
+      "engine_result": {
+        "rounds": 499,
+        "winner": "B",
+        "end_reason": 1,
+        "a_dragons": 20,
+        "b_dragons": 18,
+        "a_length": 240,
+        "b_length": 316,
+        "events": 92889,
+        "a_queen": 0,
+        "b_queen": 0,
+        "a_longest": 37,
+        "b_longest": 57
+      },
+      "cooperation": {
+        "A": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        },
+        "B": {
+          "grants": 0,
+          "releases": 0,
+          "pickups": 0,
+          "received_pearls": 0
+        }
+      },
+      "intentional_self_collisions": 0,
+      "accidental_self_collisions": 0
+    }
+  ]
+}

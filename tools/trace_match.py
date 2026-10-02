@@ -11,13 +11,15 @@ p.add_argument('--a', default='opponents/starter')
 p.add_argument('--b', default='opponents/v2')
 p.add_argument('--seed', type=int, default=17)
 p.add_argument('--out', default='test-results/v2-trace.json')
+p.add_argument('--dragon', type=int, help='Record only this dragon (for example 0 or 1 for a queen)')
 a = p.parse_args()
 turns = []
 original = SandboxBot.ask
 def traced(self, block):
     output = original(self, block)
-    turns.append(dict(dragon=self._name, init=self._init.decode(),
-                      input=block.decode(), output=output.decode()))
+    if a.dragon is None or int(self._name) == a.dragon:
+        turns.append(dict(dragon=self._name, init=self._init.decode(),
+                          input=block.decode(), output=output.decode()))
     return output
 SandboxBot.ask = traced
 try:
