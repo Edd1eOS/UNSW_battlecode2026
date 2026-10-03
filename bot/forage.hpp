@@ -18,7 +18,7 @@ struct Plan { Decision action; std::vector<Direction> moves; std::string note; }
 // 工兵看到敌方 Queen，且一回合内有完整可见通路时，可以交换掉 Queen。
 // 路径不穿越其他身体，长度预算以回合开始长度计算；从不让己方 Queen 执行。
 inline std::vector<Direction> attack_queen(const Controller& ct,const Memory& m, bool ordinary=false) {
-    if(ct.get_id()<=1 || ct.get_unit_count()<4) return {};
+    if(ct.get_id()<=1 || ct.get_unit_count()<3) return {};
     Position target; bool found=false;int best_value=0;
     for(const auto& t:ct.get_tiles()) {
         const auto* p=t.get_dragon();
@@ -28,7 +28,7 @@ inline std::vector<Direction> attack_queen(const Controller& ct,const Memory& m,
             int seen=0;
             for(const auto& body:ct.get_tiles())
                 if(body.get_dragon() && body.get_dragon()->get_id()==p->get_id()) ++seen;
-            if(seen>=ct.get_length()+3) value=seen;
+            if(seen>=ct.get_length()+(ct.get_unit_count()>=10?0:3)) value=seen;
         }
         if(value>best_value) {target=t.get_position();found=true;best_value=value;}
     }
@@ -96,13 +96,67 @@ inline std::vector<int> distances(const Controller& ct, const Memory& m, Positio
     return dist;
 }
 
+// Estimate enemy sprint reach using only the visible body chain.
+inline int enemy_reach(const Controller& ct,const Memory& m,const unswbc::Tile& head) {
+    const auto id=head.get_dragon()->get_id();
+    std::vector<Position> chain{head.get_position()}; bool complete=false;
+    for(int step=0;step<64;++step) {
+        bool added=false;
+        for(const auto& t:ct.get_tiles()) {
+            const auto* p=t.get_dragon(); Position n;
+            if(!p || p->get_id()!=id || p->is_head()
+               || std::find(chain.begin(),chain.end(),t.get_position())!=chain.end()) continue;
+            if(m.destination(ct,t.get_position(),p->get_dir(),n) && n==chain.back()) {
+                chain.push_back(t.get_position()); added=true; break;
+            }
+        }
+        if(added) continue;
+        complete=true;
+        const auto* tail=ct.get_tile(chain.back());
+        for(auto d:Direction::get_direction_list()) {
+            Position n;
+            if(tail->get_edge(d).get_edge_type()==EdgeType::KELP) continue;
+            if(!m.destination(ct,chain.back(),d,n) || !ct.get_tile(n)) complete=false;
+        }
+        break;
+    }
+    int length=static_cast<int>(chain.size());
+    return std::min(8,complete?std::max(1,(length+3)/4+length-2):std::max(3,(length+3)/4+length-2));
+}
+
+inline std::vector<double> queen_danger(const Controller& ct,const Memory& m) {
+    std::vector<double> danger(m.cells.size(),0);
+    for(const auto& t:ct.get_tiles()) {
+        const auto* p=t.get_dragon();
+        if(!p || !p->is_head() || p->get_id()==ct.get_id()) continue;
+        bool enemy=p->get_team()!=ct.get_team();
+        if(!enemy && p->get_id()<ct.get_id()) continue;
+        int range=enemy?enemy_reach(ct,m,t):1;
+        std::queue<Position> q;std::vector<int> dist(m.cells.size(),-1);
+        q.push(t.get_position());dist[m.index(t.get_position())]=0;
+        while(!q.empty()) {
+            auto at=q.front();q.pop();int depth=dist[m.index(at)];
+            if(depth>=range) continue;
+            for(auto d:Direction::get_direction_list()) {
+                Position n;if(!m.destination(ct,at,d,n)||!m.cell(n)||dist[m.index(n)]>=0) continue;
+                const auto* live=ct.get_tile(n);
+                if(!live || live->get_dragon()) continue;
+                dist[m.index(n)]=depth+1;q.push(n);
+                danger[m.index(n)]+=enemy?(depth==0?1.0:(depth==1?0.8:0.6)):0.25;
+            }
+        }
+    }
+    return danger;
+}
+
 inline std::vector<double> danger_map(const Controller& ct,const Memory& m) {
     std::vector<double> danger(m.cells.size(),0);
     for(const auto& t:ct.get_tiles()) {
         auto p=t.get_dragon();
-        if(!p || !p->is_head() || p->get_id()<=ct.get_id()) continue;
+        if(!p || !p->is_head() || p->get_id()==ct.get_id()) continue;
+        if(p->get_team()==ct.get_team() && p->get_id()<ct.get_id()) continue;
         // 后行动的敌人可能使用多步移动；同队也需要给头部留出一步余量。
-        int range=p->get_team()==ct.get_team()?1:3;
+        int range=p->get_team()==ct.get_team()?1:enemy_reach(ct,m,t);
         std::queue<Position> q; std::vector<int> dist(m.cells.size(),-1);
         q.push(t.get_position()); dist[m.index(t.get_position())]=0;
         while(!q.empty()) {
@@ -113,7 +167,7 @@ inline std::vector<double> danger_map(const Controller& ct,const Memory& m) {
                 const auto* live=ct.get_tile(n); if(!live || live->get_dragon()) continue;
                 if(dist[m.index(n)]>=0) continue;
                 dist[m.index(n)]=depth+1;
-                danger[m.index(n)]+=depth==0?1.0:(depth==1?0.35:0.12);
+                danger[m.index(n)]+=depth==0?1.0:(depth==1?0.25:0.08/(depth-1));
                 q.push(n);
             }
         }
@@ -145,7 +199,7 @@ inline int select_goal(const Controller& ct, const Memory& m, State& state) {
                 if(food[j]>0 && reach[j]!=9999 && distance(m,p,position(m,j))<=4)
                     cluster+=food[j]/(1.0+distance(m,p,position(m,j)));
             reward=100*food[i]+28*std::min(cluster,5.0);
-        } else if(!c.known) reward=48;
+        } else if(!c.known) reward=20;
         else continue;
         double score=reward/(reach[i]+3.0);
         score/=1.0+0.2*queen_crowding(ct,p);
@@ -202,9 +256,9 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             int budget=110; auto future=search_survival(ct,next,0,6,budget,&m);
             int safety=future.depth>=6?2:((future.uncertain && future.depth>=2)?2:0);
             auto e=evaluate(ct,end,&m);
-            double score=static_cast<int>(next.eaten.size())*105.0;
+            double score=static_cast<int>(next.eaten.size())*(ct.get_length()==3?230.0:(ct.get_length()==2?150.0:105.0));
             score-=goal>=0?12.0*std::min(field[m.index(end)],100):0;
-            score-=danger[m.index(end)]*(queen?360:170);
+            score-=danger[m.index(end)]*(ct.get_length()<=2?75.0:(ct.get_length()==3?120.0:170.0));
             score-=10*m.visits(end)+std::min(20,m.lifetime_visits(end))*1.5;
             score+=std::min(e.space,25)*1.2;
             score-=65*queen_crowding(ct,end);
@@ -249,9 +303,9 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             const auto* t=ct.get_tile(n); if(!t || t->get_dragon() || danger[m.index(n)]>=1) continue;
             tail_space=std::max(tail_space,evaluate(ct,n,&m).space);
         }
-        const int cap=m.now<220?48:(m.now<350?24:10);
-        if(!queen && ct.get_length()>=(m.now<180?4:7) && ct.get_unit_count()<cap
-           && m.now-m.last_split_round>=2 && m.now<380 && tail_space>=3 && best>-900
+        const int cap=m.now<280?96:(m.now<400?48:16);
+        if(!queen && ct.get_length()>=(m.now<220 || ct.get_unit_count()<10?4:7) && ct.get_unit_count()<cap
+           && m.now-m.last_split_round>=1 && m.now<400 && tail_space>=1 && best>-900
            && queen_crowding(ct,tail)<=1)
             child=ct.get_length()/2;
         if(queen && ct.get_unit_count()<2 && ct.get_length()>=11 && m.now<150
