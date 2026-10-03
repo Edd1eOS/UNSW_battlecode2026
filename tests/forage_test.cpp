@@ -24,7 +24,7 @@ int main() {
       s.bot.length=4;s.bot.head.dragon_id=0;assert(forage::attack_queen(s.bot,s.memory).empty()); }
     { Scene s;s.bot.get_tile({6,5})->dragon_part=DragonPart{{6,5},1,Team::B,Direction::WEST,true};
       assert(forage::attack_queen(s.bot,s.memory).size()==1);
-      s.bot.unit_count=3;assert(forage::attack_queen(s.bot,s.memory).empty()); }
+      s.bot.unit_count=2;assert(forage::attack_queen(s.bot,s.memory).empty()); }
     { Scene s;s.bot.get_tile({8,5})->dragon_part=DragonPart{{8,5},3,Team::B,Direction::WEST,true};
       auto risk=forage::danger_map(s.bot,s.memory);
       assert(risk[s.memory.index({7,5})]==1 && risk[s.memory.index({6,5})]>0);
@@ -37,7 +37,7 @@ int main() {
       assert(forage::attack_queen(s.bot,s.memory).empty());
       auto path=forage::attack_queen(s.bot,s.memory,true);
       assert(path.size()==1 && path.front()==Direction(Direction::EAST));
-      s.bot.unit_count=3;assert(forage::attack_queen(s.bot,s.memory,true).empty()); }
+      s.bot.unit_count=2;assert(forage::attack_queen(s.bot,s.memory,true).empty()); }
     { Scene s;
       s.bot.get_tile({5,5})->get_edge(Direction::EAST)=Edge{false,EdgeType::PORTAL,42};
       s.memory.observe_map(s.bot,30);

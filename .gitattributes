@@ -1,0 +1,4 @@
+# Preserve benchmarked/uploaded source bytes so SHA256 records survive checkout.
+bot/** -text
+opponents/v2[89]-*/** -text
+opponents/v[3-5][0-9]-*/** -text
