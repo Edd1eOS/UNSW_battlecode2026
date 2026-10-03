@@ -20,6 +20,7 @@ cooperation_counts = {}
 planned_releases = set()
 development_counts = {}
 previous_turn = {}
+worker_peaks = {}
 original_ask = SandboxBot.ask
 def measured_ask(self, block):
     reply = original_ask(self, block)
@@ -32,13 +33,17 @@ def measured_ask(self, block):
     units_match = re.search(r'^UNIT_COUNT (\d+)', raw, re.M)
     round_match = re.search(r'^ROUND (\d+)', raw, re.M)
     dev = development_counts.setdefault(team, dict(turns=0, split_actions=0, move_steps=0,
-        observed_growth=0, peak_units=0, queen_last_round=0, queen_peak_length=0, queen_attacks=0, large_worker_attacks=0, queen_split_actions=0))
+        observed_growth=0, peak_units=0, queen_last_round=0, queen_peak_length=0, queen_attacks=0, large_worker_attacks=0, queen_split_actions=0,
+        queen_growth=0, queen_paid_steps=0, worker_peak_length=0, worker_peak_id=-1))
     dev['turns'] += 1
     if units_match: dev['peak_units'] = max(dev['peak_units'], int(units_match[1]))
     if length_match:
         length = int(length_match[1]); identity = (team, self._name)
         if identity in previous_turn:
-            dev['observed_growth'] += max(0, length - previous_turn[identity])
+            growth = max(0, length - previous_turn[identity])
+            dev['observed_growth'] += growth
+            if int(self._name) <= 1:
+                dev['queen_growth'] += growth
         split = re.search(r'^SPLIT (\d+)', action, re.M)
         move = re.search(r'^MOVE ([NESW]+)', action, re.M)
         cost = int(split[1]) if split else max(0, len(move[1]) - (length+3)//4) if move else 0
@@ -51,6 +56,13 @@ def measured_ask(self, block):
         if int(self._name) <= 1:
             dev['queen_last_round'] = int(round_match[1]) if round_match else 0
             dev['queen_peak_length'] = max(dev['queen_peak_length'], length)
+            dev['queen_paid_steps'] += cost if move else 0
+        else:
+            peak = worker_peaks.setdefault(team, {})
+            peak[int(self._name)] = max(peak.get(int(self._name), 0), length)
+            if length > dev['worker_peak_length']:
+                dev['worker_peak_length'] = length
+                dev['worker_peak_id'] = int(self._name)
     for event, amount in re.findall(r'FEED_(GRANT|RELEASE|PICKUP|RECEIPT) (\d+)', reply.decode(errors='replace')):
         key = dict(GRANT='grants', RELEASE='releases', PICKUP='pickups', RECEIPT='received_pearls')[event]
         counts[key] += int(amount) if event == 'RECEIPT' else 1
@@ -103,6 +115,7 @@ for map_name in args.maps:
             planned_releases.clear()
             development_counts.clear()
             previous_turn.clear()
+            worker_peaks.clear()
             bots = [candidate, opponent] if side == 'A' else [opponent, candidate]
             buffer = io.StringIO()
             with contextlib.redirect_stdout(buffer), contextlib.redirect_stderr(buffer):
@@ -127,6 +140,15 @@ for map_name in args.maps:
             row['intentional_self_collisions'] = sum(int(dragon) in planned_releases for dragon in
                 re.findall(r'bot (\d+) \(team '+side+r'\) died: hit itself', log))
             row['accidental_self_collisions'] = row['self_collisions'] - row['intentional_self_collisions']
+            deaths = {int(identity): dict(round=int(round_num), reason=reason.strip())
+                      for round_num, identity, reason in re.findall(
+                          r'round (\d+): bot (\d+) \(team '+side+r'\) died: ([^\n]+)', log)}
+            # Observed peaks include starting and inherited split lengths;
+            # a dragon's final action can grow then die before another input.
+            row['observed_peak_workers'] = [dict(id=identity, peak_length=length,
+                                             death=deaths.get(identity))
+                for identity, length in sorted(worker_peaks.get(side, {}).items(),
+                    key=lambda item: (-item[1], item[0]))[:5]]
             print(row, flush=True)
 report = dict(candidate=args.candidate, opponent=args.opponent,
               engine_version=version('unswbc'), map_dir=args.map_dir,
