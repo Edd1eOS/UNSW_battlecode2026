@@ -555,6 +555,84 @@
           "map": "Stripes",
           "result": "win"
         }
+      ],
+      "rating_delta_displayed": -3,
+      "note": "Observed1615 after concurrent CheckRaise -21 plus this own series -3; do not assign entire1639->1615 to Bamboo."
+    },
+    {
+      "series": 962629,
+      "opponent": "Check Raise",
+      "submission": 15719,
+      "platform_version": 14,
+      "type": "ranked",
+      "initiated_by": "platform or opponent; not manually requested by this run",
+      "wins": 0,
+      "losses": 5,
+      "rating_delta_displayed": -21,
+      "games": [
+        {
+          "match": 962629,
+          "map": "Australia",
+          "result": "loss"
+        },
+        {
+          "match": 962630,
+          "map": "Tower Defense",
+          "result": "loss"
+        },
+        {
+          "match": 962631,
+          "map": "weakhold",
+          "result": "loss"
+        },
+        {
+          "match": 962632,
+          "map": "Default",
+          "result": "loss"
+        },
+        {
+          "match": 962633,
+          "map": "Maze",
+          "result": "loss"
+        }
+      ]
+    },
+    {
+      "series": 962971,
+      "opponent": "Deep Sea Dragons",
+      "submission": 15719,
+      "platform_version": 14,
+      "type": "ranked",
+      "initiated_by": "platform or opponent; not manually requested by this run",
+      "wins": 1,
+      "losses": 4,
+      "rating_delta_displayed": -27,
+      "games": [
+        {
+          "match": 962971,
+          "map": "Trauma",
+          "result": "loss"
+        },
+        {
+          "match": 962972,
+          "map": "Around UNSW",
+          "result": "loss"
+        },
+        {
+          "match": 962973,
+          "map": "Stripes",
+          "result": "loss"
+        },
+        {
+          "match": 962974,
+          "map": "weakhold",
+          "result": "win"
+        },
+        {
+          "match": 962975,
+          "map": "Slithery Fight",
+          "result": "loss"
+        }
       ]
     }
   ],
@@ -60077,10 +60155,13 @@
     "queen_growth is observed gross growth after subtracting prior requested action cost; queen_paid_steps counts requested paid steps, which can exceed executed steps if the action dies midway."
   ],
   "latest_verified_online": {
-    "observed_utc": "2026-10-03T12:48:00Z",
+    "observed_utc": "2026-10-03T13:01:00Z",
     "submission": 15719,
     "platform_version": 14,
-    "rating": 1615
+    "rating": 1588,
+    "total_games": 100,
+    "wins": 48,
+    "losses": 52
   },
   "native_checks": {
     "version": "v66",
@@ -60100,5 +60181,23 @@
       "tools/collect_benchmarks.py"
     ]
   },
-  "rating_system_reference": "https://game.battlecode.au/docs/elo"
+  "rating_system_reference": "https://game.battlecode.au/docs/elo",
+  "final_selection": {
+    "version": "v66",
+    "platform_version": 14,
+    "submission": 15719,
+    "source_hash": "42162e3c924cb13407aa7810c8f8d1fbe7f9a06ae77514ef47804bda2c4a4f61",
+    "rating": 1588,
+    "peak_observed_rating": 1740,
+    "target_rating": 1800,
+    "target_reached": false,
+    "starting_rating": 1661,
+    "net_rating_change": -73,
+    "note": "Two online experiments reverted after cross-opponent tests. Switching to saved ratings is not earned Elo. v109 remains experimental; no decisive upgrade."
+  },
+  "experiment_count": 13,
+  "online_new_upload_count": 2,
+  "completed_local_comparison_count": 28,
+  "completed_local_game_count": 532,
+  "iteration_work_stopped_utc": "2026-10-03T13:05:15Z"
 }
