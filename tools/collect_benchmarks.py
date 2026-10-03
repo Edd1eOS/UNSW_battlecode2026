@@ -15,6 +15,9 @@ comparisons = []
 for report_path in sorted((root / 'test-results').glob(args.prefix + '*/summary.json')):
     report = json.loads(report_path.read_text(encoding='utf-8'))
     games = report['games']
+    for game in games:
+        if 'growth_champions' in game:
+            game['observed_peak_workers'] = game.pop('growth_champions')
     comparisons.append(dict(name=report_path.parent.name,
         candidate=report['candidate'], opponent=report['opponent'],
         source_hash=report['candidate_hash'], opponent_hash=report['opponent_hash'],
