@@ -453,8 +453,13 @@ inline void remember_action(const Controller& ct, Memory& memory, const Decision
     if (action.child_size) { memory.last_split_round = round; ++memory.splits_done; return; }
     if (moves.size() <= 1) return;
     Simulation state{memory.body, {}, static_cast<int>(memory.body.size()) == ct.get_length(), ct.get_length()};
+    int step = 0;
     for (auto d : moves) {
         if (!simulate_step(ct, state, d, &memory)) return;
+        if (++step > (ct.get_length()+3)/4) {
+            --state.length;
+            if (static_cast<int>(state.body.size()) > state.length) state.body.pop_back();
+        }
     }
     // 输出动作若成功，下回合应从这个身体开始；多步不能只记最后的头。
     memory.body = state.body;

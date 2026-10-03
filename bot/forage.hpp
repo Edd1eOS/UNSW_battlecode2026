@@ -1,6 +1,7 @@
 #pragma once
 #include "strategy.hpp"
 #include <cmath>
+#include "terrain.hpp"
 
 // v6：先选择有收益的目的地，再在可见区域内规划本回合的安全动作。
 // 所有记忆都来自自身视野；没有读取地图文件或对手隐藏状态。
@@ -12,6 +13,7 @@ struct State {
     int last_growth = 0;
     int old_length = 0;
     int last_portal_round = -1000;
+    bool collector = false;
 };
 struct Plan { Decision action; std::vector<Direction> moves; std::string note; };
 
@@ -175,7 +177,7 @@ inline std::vector<double> danger_map(const Controller& ct,const Memory& m) {
     return danger;
 }
 
-inline int select_goal(const Controller& ct, const Memory& m, State& state) {
+inline int select_goal(const Controller& ct, const Memory& m, State& state, const terrain::EscapeMap* exits=nullptr) {
     auto reach=distances(ct,m,ct.get_position());
     double best=-1; int goal=-1;
     std::vector<double> food(m.cells.size(),0);
@@ -190,6 +192,7 @@ inline int select_goal(const Controller& ct, const Memory& m, State& state) {
     }
     for(int i=0;i<static_cast<int>(m.cells.size());++i) {
         if(reach[i]==9999 || reach[i]==0) continue;
+        if(exits && exits->worsens(m,ct.get_position(),position(m,i))) continue;
         auto p=position(m,i); const auto& c=m.cells[i];
         double reward=0;
         if(food[i]>0) {
@@ -215,57 +218,51 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
     if(ct.get_length()>state.old_length) state.last_growth=m.now;
     state.old_length=ct.get_length();
     const bool queen=ct.get_id()<=1;
+    if(!queen && ct.get_id()%4==2 && m.now>=70 && ct.get_unit_count()>=8) state.collector=true;
     const auto danger=danger_map(ct,m);
-    if(queen) {
-        std::array<double,4> adjustment{};
-        for(auto d:Direction::get_direction_list()) {
-            Position n; if(m.destination(ct,ct.get_position(),d,n) && m.cell(n))
-                adjustment[Atlas::direction_index(d)]=-300*danger[m.index(n)];
-        }
-        auto action=choose_action(ct,m,m.now,true,adjustment);
-        auto moves=action.child_size?std::vector<Direction>{}:plan_moves(ct,m,action.direction);
-        Simulation s{m.body,{},static_cast<int>(m.body.size())==ct.get_length(),ct.get_length()};
-        double first_danger=0;
-        for(std::size_t i=0;i<moves.size();++i) {
-            if(!simulate_step(ct,s,moves[i],&m)) break;
-            if(i==0) first_danger=danger[m.index(s.body.front())];
-            else if(danger[m.index(s.body.front())]>first_danger) {moves.erase(moves.begin()+1,moves.end());break;}
-        }
-        return {action,moves,"V7 queen"};
+    const auto exits=terrain::build(ct,m);
+    if(!queen) {
+        auto attack=attack_queen(ct,m);
+        if(!attack.empty()) return {{attack.front(),0},attack,"V7 ATTACK_QUEEN"};
+        attack=attack_queen(ct,m,true);
+        if(!attack.empty()) return {{attack.front(),0},attack,"V17 ATTACK_LARGE_WORKER"};
     }
-    auto attack=attack_queen(ct,m);
-    if(!attack.empty()) return {{attack.front(),0},attack,"V7 ATTACK_QUEEN"};
-    attack=attack_queen(ct,m,true);
-    if(!attack.empty()) return {{attack.front(),0},attack,"V17 ATTACK_LARGE_WORKER"};
-    const int goal=select_goal(ct,m,state);
+    const int goal=select_goal(ct,m,state,&exits);
     const auto field=goal>=0?distances(ct,m,position(m,goal),true):std::vector<int>(m.cells.size(),0);
     Plan plan{{choose_move(ct,m),0},{},""};
-    double best=-1e30; int explored=0;
+    double best=-1e30; int explored=0; int best_viable=-1;
     Simulation initial{m.body,{},static_cast<int>(m.body.size())==ct.get_length(),ct.get_length()};
     if(initial.body.empty()) initial.body.push_back(ct.get_position());
     std::vector<Direction> path;
     // 最多四步，全为回合开始长度所允许的免费动作，不靠吃珍珠增加免费额度。
-    const int limit=std::min(4,(ct.get_length()+3)/4);
+    const int free_steps=(ct.get_length()+3)/4;
+    const int limit=queen?std::min(6,free_steps+2):std::min(4,free_steps);
     auto visit=[&](auto&& self,const Simulation& current)->void {
         if(static_cast<int>(path.size())>=limit || explored>=180) return;
         for(auto d:Direction::get_direction_list()) {
+            const bool paid=static_cast<int>(path.size())>=free_steps;
+            if(paid && current.length<=2) continue;
             Simulation next=current;
             if(!simulate_step(ct,next,d,&m)) continue;
+            if(exits.worsens(m,current.body.front(),next.body.front())) continue;
+            if(paid) {--next.length;if(static_cast<int>(next.body.size())>next.length) next.body.pop_back();}
             ++explored; path.push_back(d);
             auto end=next.body.front();
-            int budget=110; auto future=search_survival(ct,next,0,6,budget,&m);
+            const int horizon=queen?8:6;
+            int budget=queen?220:110; auto future=search_survival(ct,next,0,horizon,budget,&m);
+            const int viable=future.depth>=horizon || future.uncertain;
             int safety=future.depth>=6?2:((future.uncertain && future.depth>=2)?2:0);
             auto e=evaluate(ct,end,&m);
-            double score=static_cast<int>(next.eaten.size())*(ct.get_length()==3?230.0:(ct.get_length()==2?150.0:105.0));
+            double score=static_cast<int>(next.eaten.size())*(queen || state.collector?175.0:(ct.get_length()==3?230.0:(ct.get_length()==2?150.0:105.0)));
             score-=goal>=0?12.0*std::min(field[m.index(end)],100):0;
-            score-=danger[m.index(end)]*(ct.get_length()<=2?75.0:(ct.get_length()==3?120.0:170.0));
+            score-=danger[m.index(end)]*(queen?1800.0:(state.collector?300.0:(ct.get_length()<=2?75.0:(ct.get_length()==3?120.0:170.0))));
             score-=10*m.visits(end)+std::min(20,m.lifetime_visits(end))*1.5;
             score+=std::min(e.space,25)*1.2;
             score-=65*queen_crowding(ct,end);
             if(e.frontier_distance>=1000) score-=12*std::max(0,std::min(ct.get_length(),15)-e.space);
             if(!safety) score-=1200+150*(6-future.depth);
-            score-=0.4*path.size();
-            if(score>best) {best=score;plan.moves=path;plan.action.direction=path.front();}
+            score-=0.4*path.size()+150.0*std::max(0,static_cast<int>(path.size())-free_steps);
+            if(viable>best_viable || (viable==best_viable && score>best)) {best_viable=viable;best=score;plan.moves=path;plan.action.direction=path.front();}
             self(self,next); path.pop_back();
         }
     };
@@ -274,13 +271,14 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
     // A known portal may lead outside current vision. The strict visible-path simulator
     // must not silently veto every portal shortcut that the map planner selected.
     // Only short scouts take this uncertainty; Queen and long scoring dragons do not.
-    if(goal>=0 && ct.get_length()<=6 && m.now-state.last_portal_round>=3) {
+    if(!queen && goal>=0 && ct.get_length()<=6 && m.now-state.last_portal_round>=3) {
         const auto* here=ct.get_tile(ct.get_position());
         for(auto d:Direction::get_direction_list()) {
             Position out;
             if(!here->get_edge(d).is_portal() || !m.destination(ct,ct.get_position(),d,out)
                || !m.cell(out) || ct.get_tile(out)) continue;
             if(field[m.index(out)]+1>field[m.index(ct.get_position())]) continue;
+            if(exits.worsens(m,ct.get_position(),out)) continue;
             const auto& c=*m.cell(out);
             double score=7.0-12.0*std::min(field[m.index(out)],100)-10*m.visits(out)
                 -1.5*std::min(20,m.lifetime_visits(out));
@@ -304,7 +302,7 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             tail_space=std::max(tail_space,evaluate(ct,n,&m).space);
         }
         const int cap=m.now<280?96:(m.now<400?48:16);
-        if(!queen && ct.get_length()>=(m.now<220 || ct.get_unit_count()<10?4:7) && ct.get_unit_count()<cap
+        if(!queen && (!state.collector || ct.get_unit_count()<6) && ct.get_length()>=(m.now<220 || ct.get_unit_count()<10?4:7) && ct.get_unit_count()<cap
            && m.now-m.last_split_round>=1 && m.now<400 && tail_space>=1 && best>-900
            && queen_crowding(ct,tail)<=1)
             child=ct.get_length()/2;
@@ -312,7 +310,7 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
            && tail_space>=10 && best>-900) child=3;
     }
     if(child && ct.can_split(child)) {plan.action.child_size=child;plan.moves.clear();}
-    plan.note="V6 goal="+std::to_string(goal)+" idle="+std::to_string(m.now-state.last_growth)
+    plan.note=(queen?"V62 QUEEN goal=":(state.collector?"V62 COLLECTOR goal=":"V62 WORKER goal="))+std::to_string(goal)+" idle="+std::to_string(m.now-state.last_growth)
         +" units="+std::to_string(ct.get_unit_count());
     return plan;
 }
