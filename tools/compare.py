@@ -35,6 +35,11 @@ def measured_ask(self, block):
     dev = development_counts.setdefault(team, dict(turns=0, split_actions=0, move_steps=0,
         observed_growth=0, peak_units=0, queen_last_round=0, queen_peak_length=0, queen_attacks=0, large_worker_attacks=0, queen_split_actions=0,
         queen_growth=0, queen_paid_steps=0, worker_peak_length=0, worker_peak_id=-1))
+    dev.setdefault('resource_contest_turns', 0)
+    dev.setdefault('contact_action_changes', 0)
+    contest = re.search(r'\braces=(\d+)', action)
+    dev['resource_contest_turns'] += int(contest is not None and int(contest[1]) > 0)
+    dev['contact_action_changes'] += int('contact_change=1' in action)
     dev['turns'] += 1
     if units_match: dev['peak_units'] = max(dev['peak_units'], int(units_match[1]))
     if length_match:
