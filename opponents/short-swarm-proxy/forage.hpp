@@ -277,7 +277,6 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             Position out;
             if(!here->get_edge(d).is_portal() || !m.destination(ct,ct.get_position(),d,out)
                || !m.cell(out) || ct.get_tile(out)) continue;
-            if(std::find(m.body.begin(),m.body.end(),out)!=m.body.end()) continue;
             if(field[m.index(out)]+1>field[m.index(ct.get_position())]) continue;
             if(exits.worsens(m,ct.get_position(),out)) continue;
             const auto& c=*m.cell(out);

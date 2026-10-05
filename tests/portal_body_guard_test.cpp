@@ -1,4 +1,6 @@
-#ifdef OLD_BASELINE
+#ifdef CURRENT_BOT
+#include "../bot/forage.hpp"
+#elif defined(OLD_BASELINE)
 #include "../opponents/v66-queen-threat-buffer/forage.hpp"
 #else
 #include "../opponents/v95-scout-body-check/forage.hpp"

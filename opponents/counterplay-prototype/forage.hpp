@@ -2,6 +2,20 @@
 #include "strategy.hpp"
 #include <cmath>
 #include "terrain.hpp"
+#include "counter_attack.hpp"
+#include "contest.hpp"
+#include "counter_safety.hpp"
+
+// 对照测试可独立关闭一个机制；正式构建默认全部启用。
+#ifndef COUNTER_TARGETS
+#define COUNTER_TARGETS 1
+#endif
+#ifndef COUNTER_FOOD_RACE
+#define COUNTER_FOOD_RACE 1
+#endif
+#ifndef COUNTER_ENDPOINTS
+#define COUNTER_ENDPOINTS 1
+#endif
 
 // v6：先选择有收益的目的地，再在可见区域内规划本回合的安全动作。
 // 所有记忆都来自自身视野；没有读取地图文件或对手隐藏状态。
@@ -14,12 +28,17 @@ struct State {
     int old_length = 0;
     int last_portal_round = -1000;
     bool collector = false;
+    int resource_contests = 0;
 };
 struct Plan { Decision action; std::vector<Direction> moves; std::string note; };
 
 // 工兵看到敌方 Queen，且一回合内有完整可见通路时，可以交换掉 Queen。
 // 路径不穿越其他身体，长度预算以回合开始长度计算；从不让己方 Queen 执行。
 inline std::vector<Direction> attack_queen(const Controller& ct,const Memory& m, bool ordinary=false) {
+    if constexpr(COUNTER_TARGETS) {
+        auto attack=counterplay::attack_queen(ct,m,ordinary);
+        return attack?attack->moves:std::vector<Direction>{};
+    }
     if(ct.get_id()<=1 || ct.get_unit_count()<3) return {};
     Position target; bool found=false;int best_value=0;
     for(const auto& t:ct.get_tiles()) {
@@ -179,6 +198,9 @@ inline std::vector<double> danger_map(const Controller& ct,const Memory& m) {
 
 inline int select_goal(const Controller& ct, const Memory& m, State& state, const terrain::EscapeMap* exits=nullptr) {
     auto reach=distances(ct,m,ct.get_position());
+    contest::Model rivals;
+    if constexpr(COUNTER_FOOD_RACE) rivals=contest::build(ct,m);
+    state.resource_contests=0;
     double best=-1; int goal=-1;
     std::vector<double> food(m.cells.size(),0);
     for(int i=0;i<static_cast<int>(m.cells.size());++i) {
@@ -189,6 +211,11 @@ inline int select_goal(const Controller& ct, const Memory& m, State& state, cons
         if(c.pearl && m.now-c.seen<=12) food[i]=t?1.0:0.45;
         else if(c.spawn_round>=m.now && c.spawn_round<=m.now+8)
             food[i]=0.25/(1.0+std::max(0,c.spawn_round-m.now-reach[i]));
+        if constexpr(COUNTER_FOOD_RACE) {
+            const double factor=rivals.factor(p,reach[i]);
+            if(food[i]>0 && factor<1) ++state.resource_contests;
+            food[i]*=factor;
+        }
     }
     for(int i=0;i<static_cast<int>(m.cells.size());++i) {
         if(reach[i]==9999 || reach[i]==0) continue;
@@ -220,17 +247,26 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
     const bool queen=ct.get_id()<=1;
     if(!queen && ct.get_id()%4==2 && m.now>=70 && ct.get_unit_count()>=8) state.collector=true;
     const auto danger=danger_map(ct,m);
+    counterplay::Endpoints endpoints;
+    if constexpr(COUNTER_ENDPOINTS) endpoints=counterplay::endpoints(ct,m);
     const auto exits=terrain::build(ct,m);
     if(!queen) {
+      if constexpr(COUNTER_TARGETS) {
+        auto attack=counterplay::attack_queen(ct,m,true);
+        if(attack) return {{attack->moves.front(),0},attack->moves,attack->note};
+      } else {
         auto attack=attack_queen(ct,m);
         if(!attack.empty()) return {{attack.front(),0},attack,"V7 ATTACK_QUEEN"};
         attack=attack_queen(ct,m,true);
         if(!attack.empty()) return {{attack.front(),0},attack,"V17 ATTACK_LARGE_WORKER"};
+      }
     }
     const int goal=select_goal(ct,m,state,&exits);
     const auto field=goal>=0?distances(ct,m,position(m,goal),true):std::vector<int>(m.cells.size(),0);
     Plan plan{{choose_move(ct,m),0},{},""};
-    double best=-1e30; int explored=0; int best_viable=-1;
+    double best=-1e30; int explored=0; int best_viable=-1, best_continuation=-1;
+    double original_best=-1e30;int original_viable=-1;
+    std::vector<Direction> original_moves;
     Simulation initial{m.body,{},static_cast<int>(m.body.size())==ct.get_length(),ct.get_length()};
     if(initial.body.empty()) initial.body.push_back(ct.get_position());
     std::vector<Direction> path;
@@ -251,6 +287,8 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             const int horizon=queen?8:6;
             int budget=queen?220:110; auto future=search_survival(ct,next,0,horizon,budget,&m);
             const int viable=future.depth>=horizon || future.uncertain;
+            const int continuation=COUNTER_ENDPOINTS?
+                counterplay::continuation_class(future,endpoints.contested(m,end)):0;
             int safety=future.depth>=6?2:((future.uncertain && future.depth>=2)?2:0);
             auto e=evaluate(ct,end,&m);
             double score=static_cast<int>(next.eaten.size())*(queen || state.collector?175.0:(ct.get_length()==3?230.0:(ct.get_length()==2?150.0:105.0)));
@@ -262,7 +300,14 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             if(e.frontier_distance>=1000) score-=12*std::max(0,std::min(ct.get_length(),15)-e.space);
             if(!safety) score-=1200+150*(6-future.depth);
             score-=0.4*path.size()+150.0*std::max(0,static_cast<int>(path.size())-free_steps);
-            if(viable>best_viable || (viable==best_viable && score>best)) {best_viable=viable;best=score;plan.moves=path;plan.action.direction=path.front();}
+            if(viable>original_viable || (viable==original_viable && score>original_best)) {
+                original_viable=viable;original_best=score;original_moves=path;
+            }
+            if(continuation>best_continuation || (continuation==best_continuation
+               && (viable>best_viable || (viable==best_viable && score>best)))) {
+                best_continuation=continuation;best_viable=viable;best=score;
+                plan.moves=path;plan.action.direction=path.front();
+            }
             self(self,next); path.pop_back();
         }
     };
@@ -295,7 +340,8 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
     if(rescue.child_size) {plan.action=rescue;plan.moves.clear();return plan;}
     int child=0;
     if(ct.can_split(2) && static_cast<int>(m.body.size())==ct.get_length()
-       && nearby_threats(ct,ct.get_position())==0) {
+       && nearby_threats(ct,ct.get_position())==0
+       && (!COUNTER_ENDPOINTS || !endpoints.contested(m,ct.get_position()))) {
         auto tail=m.body.back(); int tail_space=0;
         for(auto d:Direction::get_direction_list()) {
             Position n; if(!m.destination(ct,tail,d,n)) continue;
@@ -311,8 +357,10 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
            && tail_space>=10 && best>-900) child=3;
     }
     if(child && ct.can_split(child)) {plan.action.child_size=child;plan.moves.clear();}
-    plan.note=(queen?"V62 QUEEN goal=":(state.collector?"V62 COLLECTOR goal=":"V62 WORKER goal="))+std::to_string(goal)+" idle="+std::to_string(m.now-state.last_growth)
-        +" units="+std::to_string(ct.get_unit_count());
+    plan.note=(queen?"COUNTER1 QUEEN goal=":(state.collector?"COUNTER1 COLLECTOR goal=":"COUNTER1 WORKER goal="))+std::to_string(goal)+" idle="+std::to_string(m.now-state.last_growth)
+        +" units="+std::to_string(ct.get_unit_count())
+        +" races="+std::to_string(state.resource_contests)
+        +" contact_change="+std::to_string(COUNTER_ENDPOINTS && !child && !original_moves.empty() && plan.moves!=original_moves);
     return plan;
 }
 }

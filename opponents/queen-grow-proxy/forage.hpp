@@ -14,6 +14,7 @@ struct State {
     int old_length = 0;
     int last_portal_round = -1000;
     bool collector = false;
+    bool proxy_hold_length = false; // Sticky after first reaching L6.
 };
 struct Plan { Decision action; std::vector<Direction> moves; std::string note; };
 
@@ -218,6 +219,7 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
     if(ct.get_length()>state.old_length) state.last_growth=m.now;
     state.old_length=ct.get_length();
     const bool queen=ct.get_id()<=1;
+    if(!queen && ct.get_length()>=6) state.proxy_hold_length=true;
     if(!queen && ct.get_id()%4==2 && m.now>=70 && ct.get_unit_count()>=8) state.collector=true;
     const auto danger=danger_map(ct,m);
     const auto exits=terrain::build(ct,m);
@@ -277,7 +279,6 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             Position out;
             if(!here->get_edge(d).is_portal() || !m.destination(ct,ct.get_position(),d,out)
                || !m.cell(out) || ct.get_tile(out)) continue;
-            if(std::find(m.body.begin(),m.body.end(),out)!=m.body.end()) continue;
             if(field[m.index(out)]+1>field[m.index(ct.get_position())]) continue;
             if(exits.worsens(m,ct.get_position(),out)) continue;
             const auto& c=*m.cell(out);
@@ -303,7 +304,8 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             tail_space=std::max(tail_space,evaluate(ct,n,&m).space);
         }
         const int cap=m.now<280?96:(m.now<400?48:16);
-        if(!queen && (!state.collector || ct.get_unit_count()<6) && ct.get_length()>=(m.now<220 || ct.get_unit_count()<10?4:7) && ct.get_unit_count()<cap
+        if(!queen && !state.proxy_hold_length && m.now<60 && ct.get_unit_count()<8 && m.splits_done==0
+           && (!state.collector || ct.get_unit_count()<6) && ct.get_length()>=(m.now<220 || ct.get_unit_count()<10?4:7) && ct.get_unit_count()<cap
            && m.now-m.last_split_round>=1 && m.now<400 && tail_space>=1 && best>-900
            && queen_crowding(ct,tail)<=1)
             child=ct.get_length()/2;
