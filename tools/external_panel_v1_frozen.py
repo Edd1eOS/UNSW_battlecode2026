@@ -125,26 +125,15 @@ def map_record(path):
             "map_evidence": "online100_name_observed" if path.stem in OBSERVED_MAP_NAMES else "supplemental_local_not_observed"}
 
 
-def validate_seeds(seeds):
-    if set(seeds) != set(SEEDS):
-        raise ValueError("Both discovery and holdout seed lists are required")
-    for values in seeds.values():
-        if not values or len(set(values)) != len(values) or any(
-                type(value) is not int or not 0 <= value < 2**64 for value in values):
-            raise ValueError("Seeds must be distinct unsigned 64-bit integers")
-    if set(seeds["discovery"]) & set(seeds["holdout"]):
+def jobs_for(maps):
+    if set(SEEDS["discovery"]) & set(SEEDS["holdout"]):
         raise ValueError("Discovery and holdout seeds overlap")
-
-
-def jobs_for(maps, seeds=None):
-    seeds = SEEDS if seeds is None else seeds
-    validate_seeds(seeds)
     jobs = []
     for phase, names in (("discovery", DISCOVERY_MAPS), ("holdout", tuple(sorted(maps)))):
         for map_name in names:
             if map_name not in maps:
                 raise ValueError(f"Missing preregistered map: {map_name}")
-            for seed in seeds[phase]:
+            for seed in SEEDS[phase]:
                 for opponent in REGISTRY:
                     for side in ("A", "B"):
                         jobs.append({"id": f"{phase}/{opponent}/{map_name}-{seed}-{side}",
@@ -155,19 +144,17 @@ def jobs_for(maps, seeds=None):
     return jobs
 
 
-def plan_panel(out, map_dir, seeds=None):
-    seeds = SEEDS if seeds is None else seeds
-    validate_seeds(seeds)
+def plan_panel(out, map_dir):
     maps = {path.stem: map_record(path) for path in sorted(map_dir.glob("*.map"))}
     if not maps:
         raise ValueError("No current map pool")
     plan = {"created_utc": now(), "claim": "independent external mechanism tests; no rating conversion",
             "opponents": external_records(), "external_freeze_sha256": digest((EXTERNAL / "FREEZE.json").read_bytes()),
-            "environment": environment(), "maps": maps, "seeds": seeds,
+            "environment": environment(), "maps": maps, "seeds": SEEDS,
             "map_scope": "22 local map files: 17 names observed in online100 plus 5 supplements; not a verified complete online pool or byte-identical online maps",
             "discovery_selection": "Devil/Trophy elimination pressure, Islands Longest pressure, Maze Longest/Queen failures; selected from online100 before any panel match",
             "online100_findings_sha256": digest((ROOT / "test-results" / "online100-findings.md").read_bytes()),
-            "jobs": jobs_for(maps, seeds), "candidate_budget_margin_points": 90_000_000,
+            "jobs": jobs_for(maps), "candidate_budget_margin_points": 90_000_000,
             "order": "fixed phase/map/seed/opponent/A,B; partial runs resume first pending job",
             "holdout_policy": "one frozen candidate; no source or environment changes; discovery complete first"}
     out.mkdir(parents=True, exist_ok=False)
@@ -193,7 +180,7 @@ def read_plan(panel):
     for name, record in plan["maps"].items():
         if digest((panel / "maps" / f"{name}.map").read_bytes()) != record["sha256"]:
             raise ValueError(f"Frozen map changed: {name}")
-    if plan["jobs"] != jobs_for(plan["maps"], plan["seeds"]):
+    if plan["jobs"] != jobs_for(plan["maps"]):
         raise ValueError("Panel schedule differs from preregistered phases")
     return plan
 
@@ -405,20 +392,10 @@ def status(panel, plan):
     return report
 
 
-def reserve_holdout(panel, frozen, ledger, seeds=None):
+def reserve_holdout(panel, frozen, ledger):
     """Opening these seeds for one candidate makes later redesigns discovery."""
     claim = {"panel": str(panel.resolve()), "plan_file_sha256": digest((panel / "plan.json").read_bytes()),
              "candidate_source_sha256": frozen["source_bundle_sha256"], "candidate_wasm_sha256": frozen["wasm_sha256"]}
-    if seeds is not None:
-        claim["holdout_seeds"] = list(seeds)
-        for prior in ledger.parent.glob("external-panel-holdout-exposure-*.json"):
-            previous = json.loads(prior.read_text(encoding="utf-8"))["claim"]
-            previous_seeds = previous.get("holdout_seeds")
-            if previous_seeds is None:
-                previous_plan = Path(previous["panel"]) / "plan.json"
-                previous_seeds = json.loads(previous_plan.read_text(encoding="utf-8"))["plan"]["seeds"]["holdout"]
-            if set(seeds) & set(previous_seeds) and previous != claim:
-                raise ValueError("Holdout seed was already opened for another panel/candidate")
     ledger.parent.mkdir(parents=True, exist_ok=True)
     try:
         with ledger.open("x", encoding="utf-8") as stream:
@@ -442,9 +419,7 @@ def run_panel(panel, phase, limit):
     if limit is not None:
         pending = pending[:limit]
     if phase == "holdout" and pending:
-        seeds = plan["seeds"]["holdout"]
-        stamp = digest(canonical(seeds))[:16]
-        reserve_holdout(panel, frozen, ROOT / "test-results" / f"external-panel-holdout-exposure-{stamp}.json", seeds)
+        reserve_holdout(panel, frozen, ROOT / "test-results" / "external-panel-holdout-exposure-20261006.json")
     for job in pending:
         read_plan(panel)
         candidate_record(panel)
@@ -517,8 +492,6 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     plan = sub.add_parser("plan")
     plan.add_argument("--out", required=True)
-    plan.add_argument("--discovery-seed", action="append", type=int)
-    plan.add_argument("--holdout-seed", action="append", type=int)
     for command in ("protocol", "status", "freeze", "run"):
         command_parser = sub.add_parser(command)
         command_parser.add_argument("--panel", required=True)
@@ -532,9 +505,7 @@ def main():
     os.environ["UNSWBC_WARM"] = "1"
     if args.command == "plan":
         out = within(ROOT / args.out, ROOT / "test-results")
-        seeds = {"discovery": args.discovery_seed or SEEDS["discovery"],
-                 "holdout": args.holdout_seed or SEEDS["holdout"]}
-        plan = plan_panel(out, ROOT / "maps" / "current", seeds)
+        plan = plan_panel(out, ROOT / "maps" / "current")
         print(json.dumps({"panel": str(out), "scheduled": {phase: sum(j["phase"] == phase for j in plan["jobs"]) for phase in SEEDS}}))
         return
     panel = within(ROOT / args.panel, ROOT / "test-results")

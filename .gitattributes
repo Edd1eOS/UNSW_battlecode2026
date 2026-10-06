@@ -9,3 +9,17 @@ opponents/short-swarm-proxy/** -text
 opponents/queen-grow-proxy/** -text
 opponents/generalist-v*/** -text
 external-benchmarks/** -text
+# Frozen evaluation drivers and evidence readers use exact byte fingerprints.
+tools/external_panel.py -text
+tools/external_panel_v1_frozen.py -text
+tools/panel_trajectory.py -text
+tools/import_online_replays.py -text
+tools/report_online_raw.py -text
+tools/audit_online.py -text
+tools/trajectory_metrics.py -text
+tools/verify_candidate.py -text
+tools/verify_portal_tracking.py -text
+tools/audit_online_panel.py -text
+docs/oct6-*-manifest.json -text
+tests/generalist*_test.cpp -text
+tests/born_threat*_test.cpp -text

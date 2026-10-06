@@ -58,6 +58,47 @@ class ExternalPanelTest(unittest.TestCase):
             self.assertEqual({(j["opponent"], j["candidate_team"]) for j in holdout if j["map"] == name},
                              {(o, side) for o in panel.REGISTRY for side in "AB"})
 
+    def test_fresh_seed_plan_keeps_full_map_side_coverage(self):
+        maps = {p.stem: panel.map_record(p) for p in (panel.ROOT / "maps/current").glob("*.map")}
+        seeds = {"discovery": [2026100602], "holdout": [2026100692]}
+        jobs = panel.jobs_for(maps, seeds)
+        self.assertEqual({j["seed"] for j in jobs if j["phase"] == "holdout"}, {2026100692})
+        self.assertEqual(len([j for j in jobs if j["phase"] == "holdout"]), len(maps) * 4)
+        for invalid in ({"discovery": [], "holdout": [1]},
+                        {"discovery": [1], "holdout": [1]},
+                        {"discovery": [True], "holdout": [2]},
+                        {"discovery": [1], "holdout": [2, 2]}):
+            with self.assertRaises(ValueError):
+                panel.jobs_for(maps, invalid)
+
+    def test_seed_exposure_is_detected_across_different_ledger_files(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            first, second = root / "one", root / "two"
+            first.mkdir(); second.mkdir()
+            for directory in (first, second):
+                (directory / "plan.json").write_text('{"plan":{"seeds":{"holdout":[91]}}}')
+            frozen = {"source_bundle_sha256": "candidate1", "wasm_sha256": "binary1"}
+            panel.reserve_holdout(first, frozen, root / "external-panel-holdout-exposure-first.json", [91])
+            with self.assertRaisesRegex(ValueError, "already opened"):
+                panel.reserve_holdout(second, {**frozen, "source_bundle_sha256": "candidate2"},
+                                      root / "external-panel-holdout-exposure-second.json", [91])
+            panel.reserve_holdout(second, {**frozen, "source_bundle_sha256": "candidate2"},
+                                  root / "external-panel-holdout-exposure-second.json", [92])
+
+    def test_legacy_exposure_without_seed_field_still_blocks_reuse(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            first, second = root / "one", root / "two"
+            first.mkdir(); second.mkdir()
+            for directory in (first, second):
+                (directory / "plan.json").write_text('{"plan":{"seeds":{"holdout":[91]}}}')
+            frozen = {"source_bundle_sha256": "candidate1", "wasm_sha256": "binary1"}
+            panel.reserve_holdout(first, frozen, root / "external-panel-holdout-exposure-old.json")
+            with self.assertRaisesRegex(ValueError, "already opened"):
+                panel.reserve_holdout(second, {**frozen, "source_bundle_sha256": "candidate2"},
+                                      root / "external-panel-holdout-exposure-new.json", [91])
+
     def test_elimination_precedes_larger_queen_and_longest(self):
         official = panel.terminal_result(result(end_reason=0, a_dragons=0, a_queen=0,
                                                 a_longest=0, a_length=0, b_queen=0, winner="B"))

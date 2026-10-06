@@ -73,6 +73,8 @@ def executed_details(data, core):
             issues.append(message)
 
     def close_turn():
+        if action is not None and action["id"] in live and action["successful"] != len(action["steps"]):
+            issue("Surviving move action is missing successful step updates")
         if pending:
             issue("Pearl clearance without a matching successful head update")
             pending.clear()
@@ -123,11 +125,13 @@ def executed_details(data, core):
                 action = None
             elif raw.get("kind") == "move" and isinstance(raw.get("steps"), list):
                 steps = raw["steps"]
-                if not steps or any(d not in "NESW" or len(d) != 1 for d in steps):
+                if not steps or any(not isinstance(d,str) or len(d)!=1 or d not in "NESW" for d in steps):
                     issue("Malformed recorded movement steps")
                 action = {"id": identity, "steps": steps, "free": (len(live[identity]["body"]) + 3) // 4,
                           "successful": 0}
             else:
+                if raw.get("kind") != "split":
+                    issue("Unsupported recorded action kind")
                 action = None
         elif kind == "dragonUpdate":
             identity = int(event["id"])
