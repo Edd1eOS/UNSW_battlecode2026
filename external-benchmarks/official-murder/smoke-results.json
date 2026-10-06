@@ -1,0 +1,194 @@
+{
+  "source_bundle_sha256": "49ab706103223f8b0399e102072133de70cb63c78caf9bce29e4e892986e1eeb",
+  "commit_sha": "79e22e7950e334711574bcc1166b3973153ccc4f",
+  "tested_utc": "2026-10-06T12:08:40.456065+00:00",
+  "toolchain": "installed official unswbc.clangtool + metered WasmPool/SandboxBot",
+  "unswbc_version": "1.2.7",
+  "upstream_scripts_executed": false,
+  "matches_run": 0,
+  "scenario_results": [
+    {
+      "name": "queen_length6_splits_to2",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "SPLIT 4",
+          "output": "SPLIT 4\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 6098599,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "queen_chases_adjacent_enemy_head",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "LOG hi bfs done\nDOT 6 5 255 0 0\nMOVE E\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 6384075,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "worker_head_pursuit_through_kelp_corridor",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE N",
+          "output": "LOG hi bfs done\nDOT 6 4 255 0 0\nMOVE N\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 6257704,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "sole_safe_step",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "LOG hi bfs done\nMOVE E\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 6146180,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "large_length_partial_body_unit_limit",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "LOG hi bfs done\nMOVE E\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 6160988,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "eight_consecutive_local_corridor_turns",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "LOG hi bfs done\nMOVE E\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 6133986,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 2,
+          "expected_action": "MOVE S",
+          "output": "LOG hi bfs done\nMOVE S\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3669220,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 3,
+          "expected_action": "MOVE W",
+          "output": "LOG hi bfs done\nMOVE W\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3670752,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 4,
+          "expected_action": "MOVE N",
+          "output": "LOG hi bfs done\nMOVE N\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3663157,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 5,
+          "expected_action": "MOVE E",
+          "output": "LOG hi bfs done\nMOVE E\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3656392,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 6,
+          "expected_action": "MOVE S",
+          "output": "LOG hi bfs done\nMOVE S\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3672168,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 7,
+          "expected_action": "MOVE W",
+          "output": "LOG hi bfs done\nMOVE W\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3663602,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 8,
+          "expected_action": "MOVE N",
+          "output": "LOG hi bfs done\nMOVE N\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3671029,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "wasm_sha256": "831b3c06360bf5f961af8c63c151c1c6e7247d0f0e3b4c64f4584b8a268ccd55",
+  "passed": true,
+  "turns_tested": 13,
+  "max_cpu_points": 6384075
+}

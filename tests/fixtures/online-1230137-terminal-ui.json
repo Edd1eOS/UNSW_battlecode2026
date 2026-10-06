@@ -1,0 +1,136 @@
+{
+  "links": [
+    {
+      "href": "https://game.battlecode.au/teams/1035",
+      "text": "Jet2Holiday"
+    },
+    {
+      "href": "https://game.battlecode.au/teams/1034",
+      "text": "wawow830"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1230137",
+      "text": "Game 1\n· Australia\nW\n(longest dragon)"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1230138",
+      "text": "Game 2\n· Prisoners Dilemma\nW"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1230139",
+      "text": "Game 3\n· weakhold\nW"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1230140",
+      "text": "Game 4\n· Default\nL"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1230141",
+      "text": "Game 5\n· Schooltime\nL"
+    }
+  ],
+  "main": "Your bot: v14 · Guard v66 - Queen threat buffer\n\nMatch 1230137\n\n6 Oct, 17:35 · Ranked · Map: Australia\n\nJet2Holiday vs wawow830\nCopy link\nDownload replay\nDownload all replays (.zip)\nGame 1\n· Australia\nW\n(longest dragon)\nGame 2\n· Prisoners Dilemma\nW\nGame 3\n· weakhold\nW\nGame 4\n· Default\nL\nGame 5\n· Schooltime\nL\nJet2Holiday\n3–2\nwawow830\nInfo\nGame Log\nOptions\nMAP\nAustralia\n\tJet2Holiday\twawow830\nQueenDead (r111)\tDead (r232)\nDragons alive7\t64\nLongest now14\t12\nTotal length48\t367\nLongest so far15\t15\nSTATS\nROUNDS 0–500\nTeam A\nTeam B\nDragons alive\n80\n40\n0\n0\n500\nQueen length\n6\n3\n0\n0\n500\nLongest dragon alive\n16\n8\n0\n0\n500\nTotal team length\n400\n200\n0\n0\n500\nPearls on board\n60\n30\n0\n0\n500\nTOTALS THROUGH ROUND 500\n\tJet2Holiday\twawow830\nDragons lost85\t265\nKelp deaths17\t86\nSelf-collisions0\t62\nOther-body deaths3\t46\nHead-to-head deaths65\t71\nNo-valid-action deaths0\t0\nSprint attempts862\t0\nSuccessful splits83\t320\nSonar pings0\t0\nBOARD\nSize\n64×64\nPearls on board\n39\nPortals\n4\nSeed\n0x34a29538870cf723\n÷2\n2×\n×2\nRound 500 / 500\nStep\nRound\nTurn\nEvent\n?\nLIVE CHAT",
+  "tables": [
+    {
+      "label": "Current team statistics",
+      "rows": [
+        [
+          "",
+          "Jet2Holiday",
+          "wawow830"
+        ],
+        [
+          "Queen",
+          "Dead (r111)",
+          "Dead (r232)"
+        ],
+        [
+          "Dragons alive",
+          "7",
+          "64"
+        ],
+        [
+          "Longest now",
+          "14",
+          "12"
+        ],
+        [
+          "Total length",
+          "48",
+          "367"
+        ],
+        [
+          "Longest so far",
+          "15",
+          "15"
+        ]
+      ]
+    },
+    {
+      "label": "Cumulative team events",
+      "rows": [
+        [
+          "",
+          "Jet2Holiday",
+          "wawow830"
+        ],
+        [
+          "Dragons lost",
+          "85",
+          "265"
+        ],
+        [
+          "Kelp deaths",
+          "17",
+          "86"
+        ],
+        [
+          "Self-collisions",
+          "0",
+          "62"
+        ],
+        [
+          "Other-body deaths",
+          "3",
+          "46"
+        ],
+        [
+          "Head-to-head deaths",
+          "65",
+          "71"
+        ],
+        [
+          "No-valid-action deaths",
+          "0",
+          "0"
+        ],
+        [
+          "Sprint attempts",
+          "862",
+          "0"
+        ],
+        [
+          "Successful splits",
+          "83",
+          "320"
+        ],
+        [
+          "Sonar pings",
+          "0",
+          "0"
+        ]
+      ]
+    }
+  ],
+  "title": "Jet2Holiday vs wawow830 — UNSW Battlecode",
+  "queen_events": [
+    {
+      "round": "111",
+      "text": "dragon 1 (queen) dies. Reason: head-on collision"
+    },
+    {
+      "round": "232",
+      "text": "dragon 0 (queen) dies. Reason: head-on collision"
+    }
+  ]
+}

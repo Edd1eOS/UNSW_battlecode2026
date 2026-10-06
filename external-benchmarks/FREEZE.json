@@ -1,0 +1,20 @@
+{
+  "frozen_utc": "2026-10-06T12:09:52.148781+00:00",
+  "purpose": "External source freezing and protocol smoke checks only; no matches.",
+  "files": {
+    "smoke_external.py": "ae88d8bd409636a23210eeae526ac4316409b804a2c71910ef5eb1aeb1af76b4",
+    "README.md": "5a7b664156cb80b2c49ed1de580d30656d9fa4b3704bfae30c06b968dfc91c9a",
+    "sas-987/README.md": "c1d6cc436aea226e9e4db9e283c2fbad685ff8d8fd68b8bd8959cae8f8395fe3",
+    "sas-987/PROVENANCE.json": "b98650e5069ee0d3891ce747204b8fbffe1d682e40ede29e6c0fd7fff596fb1d",
+    "sas-987/bot.wasm": "2ad3e55d4bc727449fa842e8bbf720f6ce4df690409889fb795faf69c0185ddb",
+    "sas-987/smoke-fixtures.json": "bd992941fa7171d069e285991e26a80173e992eb94d38ecd6f5fb916d72e53ca",
+    "sas-987/smoke-results.json": "493ab5b9c2605c9e8f09fca4449db696eb5c03ea24e8bd9325e04c6bfa44e255",
+    "sas-987/build.log": "76146bba162f25fbee8cb3c1e4bc7b573fb6d523721b3eaab93f842a433e9511",
+    "official-murder/README.md": "f4d262301a85403f3dfdf3de920dd7cfedc776f6eab9af19721ff67a1c65ab2a",
+    "official-murder/PROVENANCE.json": "75c1a7d550119f5eb98aad529fa40f1cd54d80c19599f76285c1647a008f7657",
+    "official-murder/bot.wasm": "831b3c06360bf5f961af8c63c151c1c6e7247d0f0e3b4c64f4584b8a268ccd55",
+    "official-murder/smoke-fixtures.json": "7c6715caccf1251ecf652c2bf872de267806142658d02cbd4b98b7a53859cd5f",
+    "official-murder/smoke-results.json": "a0cf0d4ed29d2cae9c2f1bd6846afb37c69bf92c6038a7d5c102e25e7d65c2c1",
+    "official-murder/build.log": "251fdc8fe558c3f1ab311718c5544bab033750716f66bd8857defa076002b240"
+  }
+}

@@ -1,0 +1,6 @@
+preparing judge clang for this machine
+  clang (1 of 2)...
+  clang (1 of 2): 4s
+  wasm-ld (2 of 2)...
+  wasm-ld (2 of 2): 2s
+building D:\UNSW\Y1\T3\battlecode2026\external-benchmarks\build-stages\sas-987-80741062ddc9441d087b541c to wasm with judge clang

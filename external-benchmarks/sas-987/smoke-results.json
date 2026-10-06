@@ -1,0 +1,222 @@
+{
+  "source_bundle_sha256": "80741062ddc9441d087b541c2311c69cfdd7abe2538577b857667aca8dee7529",
+  "commit_sha": "1a3f3775353605f0da7142f276085e2764bca997",
+  "tested_utc": "2026-10-06T12:08:30.118190+00:00",
+  "toolchain": "installed official unswbc.clangtool + metered WasmPool/SandboxBot",
+  "unswbc_version": "1.2.7",
+  "upstream_scripts_executed": false,
+  "matches_run": 0,
+  "scenario_results": [
+    {
+      "name": "queen_length4_splits_to2",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "SPLIT 2",
+          "output": "SPLIT 2\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3582025,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "adjacent_visible_pearl",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3550779,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "worker_adjacent_pearl",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3551085,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "protocol2_then3_with_uint64_message",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3550779,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 2,
+          "expected_action": "MOVE N",
+          "output": "MOVE N\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3579358,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "toroidal_seam_pearl",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE W",
+          "output": "MOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3559493,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "large_length_partial_body_unit_limit",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3579983,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "eight_consecutive_local_corridor_turns",
+      "turns": [
+        {
+          "turn": 1,
+          "expected_action": "MOVE E",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3550476,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 2,
+          "expected_action": "MOVE S",
+          "output": "MOVE S\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3551526,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 3,
+          "expected_action": "MOVE W",
+          "output": "MOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3548259,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 4,
+          "expected_action": "MOVE N",
+          "output": "MOVE N\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3547053,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 5,
+          "expected_action": "MOVE E",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3548640,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 6,
+          "expected_action": "MOVE S",
+          "output": "MOVE S\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3548158,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 7,
+          "expected_action": "MOVE W",
+          "output": "MOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3546146,
+          "memory_bytes": 196608,
+          "passed": true
+        },
+        {
+          "turn": 8,
+          "expected_action": "MOVE N",
+          "output": "MOVE N\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 3547941,
+          "memory_bytes": 196608,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "wasm_sha256": "2ad3e55d4bc727449fa842e8bbf720f6ce4df690409889fb795faf69c0185ddb",
+  "passed": true,
+  "turns_tested": 15,
+  "max_cpu_points": 3582025
+}

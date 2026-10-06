@@ -1,0 +1,15 @@
+{
+  "match_id": 957659,
+  "submission": 15719,
+  "source_hash": "42162e3c924cb13407aa7810c8f8d1fbe7f9a06ae77514ef47804bda2c4a4f61",
+  "our_team": "B",
+  "opponent": "Shannon",
+  "map": "Trophy",
+  "complete": false,
+  "scope": "Selected factual lines only; not a complete replay, match denominator, or observation reconstruction.",
+  "origin": "test-results/r3-online-957659-full.log",
+  "origin_sha256": "e718e18fa8c79c5172afa5b0afa4a207117fa6a2ebc500b96c8e9b37133e9d53",
+  "identity_teams": {"0": "A", "1": "B", "2": "A", "3": "B"},
+  "source_lines": [318, 487, 2212, 2213, 2215, 2216, 2217, 2242, 2243, 2253],
+  "log": "13\tdragon 1 moves E to (17,14), step 2 of 2, pays 1, eats a pearl, length 4\n18\tdragon 2 splits off dragon 8, 2 cells\n46\tdragon 1 asks to move SSSW\n46\tdragon 1 moves S to (14,7), step 1 of 4, free\n46\tdragon 1 moves S to (14,8), step 2 of 4, free, eats a pearl, length 17\n46\tdragon 1 moves S to (14,9), step 3 of 4, free\n46\tdragon 1 moves W to (13,9), step 4 of 4, free\n46\tdragon 8 asks to move N\n46\tdragon 1 (queen) dies. Reason: head-on collision\n46\tdragon 8 dies. Reason: head-on collision\n"
+}
