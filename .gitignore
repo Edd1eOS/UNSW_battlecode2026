@@ -5,3 +5,4 @@ __pycache__/
 replays/
 test-results/
 dist/
+external-benchmarks/build-stages/

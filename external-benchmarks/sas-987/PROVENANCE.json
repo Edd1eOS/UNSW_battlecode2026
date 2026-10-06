@@ -1,0 +1,40 @@
+{
+  "repository_url": "https://github.com/sas-987/unsw_battlecode",
+  "commit_sha": "1a3f3775353605f0da7142f276085e2764bca997",
+  "commit_date_utc": "2026-10-03T17:24:09Z",
+  "retrieved_utc": "2026-10-06T12:00:36.029888+00:00",
+  "license": "MIT",
+  "source_files_unchanged": true,
+  "source_bundle_sha256": "80741062ddc9441d087b541c2311c69cfdd7abe2538577b857667aca8dee7529",
+  "files": [
+    {
+      "local_path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/sas-987/unsw_battlecode/1a3f3775353605f0da7142f276085e2764bca997/LICENSE",
+      "sha256": "481516ca9b255a00805f9488d0cccdf3a6e91d972ddeaf0cf2d012af5b924ecf",
+      "bytes": 1066
+    },
+    {
+      "local_path": "bot.toml",
+      "upstream_path": "bot.toml",
+      "url": "https://raw.githubusercontent.com/sas-987/unsw_battlecode/1a3f3775353605f0da7142f276085e2764bca997/bot.toml",
+      "sha256": "3a4c1eb1f8c86ad544fef89325658acf31e97b2ab03fdb7b5eff5519f834367e",
+      "bytes": 90
+    },
+    {
+      "local_path": "helper.hpp",
+      "upstream_path": "helper.hpp",
+      "url": "https://raw.githubusercontent.com/sas-987/unsw_battlecode/1a3f3775353605f0da7142f276085e2764bca997/helper.hpp",
+      "sha256": "ca57d2398f309144ce98f6c899d28847672cd9914ff8be03afdbb0379e7365b7",
+      "bytes": 25141
+    },
+    {
+      "local_path": "main.cpp",
+      "upstream_path": "main.cpp",
+      "url": "https://raw.githubusercontent.com/sas-987/unsw_battlecode/1a3f3775353605f0da7142f276085e2764bca997/main.cpp",
+      "sha256": "b25ec9bcc14cab7ffc0878974405b5b37d0072f5278978d88f202d1cdc9accfe",
+      "bytes": 4506
+    }
+  ],
+  "external_code_execution": "None at retrieval. Repository scripts/build hooks are not used."
+}

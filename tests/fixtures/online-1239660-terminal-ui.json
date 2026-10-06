@@ -1,0 +1,126 @@
+{
+  "links": [
+    {
+      "href": "https://game.battlecode.au/teams/711",
+      "text": "Just Reboot Normalize"
+    },
+    {
+      "href": "https://game.battlecode.au/teams/1035",
+      "text": "Jet2Holiday"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1239659",
+      "text": "Game 1\n· Autarky\nW"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1239660",
+      "text": "Game 2\n· Devil\nL\n(by elimination)"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1239661",
+      "text": "Game 3\n· Slithery Fight"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1239662",
+      "text": "Game 4\n· Trauma\nL"
+    },
+    {
+      "href": "https://game.battlecode.au/battles/1239663",
+      "text": "Game 5\n· Tower Defense\nW"
+    }
+  ],
+  "main": "Your bot: v14 · Guard v66 - Queen threat buffer\n\nMatch 1239660\n\n6 Oct, 19:47 · Ranked · Map: Devil\n\nJust Reboot Normalize vs Jet2Holiday\nCopy link\nDownload replay\nDownload all replays (.zip)\n4 of 5 replays available.\nGame 1\n· Autarky\nW\nGame 2\n· Devil\nL\n(by elimination)\nGame 3\n· Slithery Fight\nGame 4\n· Trauma\nL\nGame 5\n· Tower Defense\nW\nJust Reboot Normalize\n2–2\nJet2Holiday\nInfo\nGame Log\nOptions\nMAP\nDevil\n\tJust Reboot Normalize\tJet2Holiday\nQueen2\tDead (r32)\nDragons alive57\t0\nLongest now5\t0\nTotal length142\t0\nLongest so far9\t13\nSTATS\nROUNDS 0–176\nTeam A\nTeam B\nDragons alive\n80\n40\n0\n0\n176\nQueen length\n4\n2\n0\n0\n176\nLongest dragon alive\n16\n8\n0\n0\n176\nTotal team length\n160\n80\n0\n0\n176\nPearls on board\n30\n15\n0\n0\n176\nTOTALS THROUGH ROUND 176\n\tJust Reboot Normalize\tJet2Holiday\nDragons lost63\t31\nKelp deaths17\t2\nSelf-collisions15\t0\nOther-body deaths12\t4\nHead-to-head deaths19\t25\nNo-valid-action deaths0\t0\nSprint attempts117\t15\nSuccessful splits117\t28\nSonar pings19816\t0\nBOARD\nSize\n32×16\nPearls on board\n14\nPortals\n0\nSeed\n0x68beff2291d45649\n÷2\n2×\n×2\nRound 176 / 176\nStep\nRound\nTurn\nEvent\n?\nLIVE CHAT",
+  "tables": [
+    {
+      "label": "Current team statistics",
+      "rows": [
+        [
+          "",
+          "Just Reboot Normalize",
+          "Jet2Holiday"
+        ],
+        [
+          "Queen",
+          "2",
+          "Dead (r32)"
+        ],
+        [
+          "Dragons alive",
+          "57",
+          "0"
+        ],
+        [
+          "Longest now",
+          "5",
+          "0"
+        ],
+        [
+          "Total length",
+          "142",
+          "0"
+        ],
+        [
+          "Longest so far",
+          "9",
+          "13"
+        ]
+      ]
+    },
+    {
+      "label": "Cumulative team events",
+      "rows": [
+        [
+          "",
+          "Just Reboot Normalize",
+          "Jet2Holiday"
+        ],
+        [
+          "Dragons lost",
+          "63",
+          "31"
+        ],
+        [
+          "Kelp deaths",
+          "17",
+          "2"
+        ],
+        [
+          "Self-collisions",
+          "15",
+          "0"
+        ],
+        [
+          "Other-body deaths",
+          "12",
+          "4"
+        ],
+        [
+          "Head-to-head deaths",
+          "19",
+          "25"
+        ],
+        [
+          "No-valid-action deaths",
+          "0",
+          "0"
+        ],
+        [
+          "Sprint attempts",
+          "117",
+          "15"
+        ],
+        [
+          "Successful splits",
+          "117",
+          "28"
+        ],
+        [
+          "Sonar pings",
+          "19816",
+          "0"
+        ]
+      ]
+    }
+  ],
+  "title": "Just Reboot Normalize vs Jet2Holiday — UNSW Battlecode"
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "name": "queen_length6_splits_to2",
+    "init": "ID 0\nTEAM A\nMAP 20 20\nUNIT_LIMIT 64\n",
+    "turns": [
+      "ROUND 1\nDIR E\nLENGTH 6\nUNIT_COUNT 1\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 6\nA 0 5 5 E 1\nA 0 4 5 E 0\nA 0 3 5 E 0\nA 0 2 5 E 0\nA 0 2 6 N 0\nA 0 2 7 N 0\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n"
+    ],
+    "expected_actions": [
+      "SPLIT 4"
+    ]
+  },
+  {
+    "name": "queen_chases_adjacent_enemy_head",
+    "init": "ID 0\nTEAM A\nMAP 20 20\nUNIT_LIMIT 64\n",
+    "turns": [
+      "ROUND 1\nDIR E\nLENGTH 3\nUNIT_COUNT 2\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 5\nA 0 5 5 E 1\nA 0 4 5 E 0\nA 0 3 5 E 0\nB 1 6 5 W 1\nB 1 7 5 W 0\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n. . . . . . . .\n"
+    ],
+    "expected_actions": [
+      "MOVE E"
+    ]
+  },
+  {
+    "name": "worker_head_pursuit_through_kelp_corridor",
+    "init": "ID 2\nTEAM A\nMAP 20 20\nUNIT_LIMIT 64\n",
+    "turns": [
+      "ROUND 1\nDIR E\nLENGTH 3\nUNIT_COUNT 2\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 5\nA 2 5 5 E 1\nA 2 4 5 E 0\nA 2 3 5 E 0\nB 5 6 4 W 1\nB 5 7 4 W 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w . w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w . . w w\nw w . . w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n"
+    ],
+    "expected_actions": [
+      "MOVE N"
+    ]
+  },
+  {
+    "name": "sole_safe_step",
+    "init": "ID 2\nTEAM A\nMAP 20 20\nUNIT_LIMIT 64\n",
+    "turns": [
+      "ROUND 1\nDIR E\nLENGTH 3\nUNIT_COUNT 2\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 3\nA 2 5 5 E 1\nA 2 4 5 E 0\nA 2 3 5 E 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w . . . w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n"
+    ],
+    "expected_actions": [
+      "MOVE E"
+    ]
+  },
+  {
+    "name": "large_length_partial_body_unit_limit",
+    "init": "ID 0\nTEAM A\nMAP 20 20\nUNIT_LIMIT 64\n",
+    "turns": [
+      "ROUND 1\nDIR E\nLENGTH 8\nUNIT_COUNT 64\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 4\nA 0 5 5 E 1\nA 0 4 5 E 0\nA 0 3 5 E 0\nA 0 2 5 E 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\nw . . . . w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n"
+    ],
+    "expected_actions": [
+      "MOVE E"
+    ]
+  },
+  {
+    "name": "eight_consecutive_local_corridor_turns",
+    "init": "ID 0\nTEAM A\nMAP 20 20\nUNIT_LIMIT 64\n",
+    "turns": [
+      "ROUND 1\nDIR N\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 2\nA 0 5 5 N 1\nA 0 5 6 N 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w . . w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w . w w w\nw w w w . w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 2\nDIR E\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n9 2 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n9 3 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n9 4 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n9 5 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n9 6 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n9 7 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\n9 8 0 -1\nDRAGON_BODIES 2\nA 0 6 5 E 1\nA 0 5 5 E 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w . . w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w . w w w w\nw w w . w w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 3\nDIR S\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n9 3 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n9 4 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n9 5 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n9 6 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n9 7 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\n9 8 0 -1\n3 9 0 -1\n4 9 0 -1\n5 9 0 -1\n6 9 0 -1\n7 9 0 -1\n8 9 0 -1\n9 9 0 -1\nDRAGON_BODIES 2\nA 0 6 6 S 1\nA 0 6 5 S 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w . . w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w . w w w w\nw w w . w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 4\nDIR W\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\n2 9 0 -1\n3 9 0 -1\n4 9 0 -1\n5 9 0 -1\n6 9 0 -1\n7 9 0 -1\n8 9 0 -1\nDRAGON_BODIES 2\nA 0 5 6 W 1\nA 0 6 6 W 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w . . w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w . w w w\nw w w w . w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 5\nDIR N\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n2 2 0 -1\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\nDRAGON_BODIES 2\nA 0 5 5 N 1\nA 0 5 6 N 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w . . w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w . w w w\nw w w w . w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 6\nDIR E\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n3 2 0 -1\n4 2 0 -1\n5 2 0 -1\n6 2 0 -1\n7 2 0 -1\n8 2 0 -1\n9 2 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n9 3 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n9 4 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n9 5 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n9 6 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n9 7 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\n9 8 0 -1\nDRAGON_BODIES 2\nA 0 6 5 E 1\nA 0 5 5 E 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w . . w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w . w w w w\nw w w . w w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 7\nDIR S\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n9 3 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n9 4 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n9 5 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n9 6 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n9 7 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\n9 8 0 -1\n3 9 0 -1\n4 9 0 -1\n5 9 0 -1\n6 9 0 -1\n7 9 0 -1\n8 9 0 -1\n9 9 0 -1\nDRAGON_BODIES 2\nA 0 6 6 S 1\nA 0 6 5 S 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w . . w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w . w w w w\nw w w . w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n",
+      "ROUND 8\nDIR W\nLENGTH 2\nUNIT_COUNT 2\nNUM_MSGS 0\n2 3 0 -1\n3 3 0 -1\n4 3 0 -1\n5 3 0 -1\n6 3 0 -1\n7 3 0 -1\n8 3 0 -1\n2 4 0 -1\n3 4 0 -1\n4 4 0 -1\n5 4 0 -1\n6 4 0 -1\n7 4 0 -1\n8 4 0 -1\n2 5 0 -1\n3 5 0 -1\n4 5 0 -1\n5 5 0 -1\n6 5 0 -1\n7 5 0 -1\n8 5 0 -1\n2 6 0 -1\n3 6 0 -1\n4 6 0 -1\n5 6 0 -1\n6 6 0 -1\n7 6 0 -1\n8 6 0 -1\n2 7 0 -1\n3 7 0 -1\n4 7 0 -1\n5 7 0 -1\n6 7 0 -1\n7 7 0 -1\n8 7 0 -1\n2 8 0 -1\n3 8 0 -1\n4 8 0 -1\n5 8 0 -1\n6 8 0 -1\n7 8 0 -1\n8 8 0 -1\n2 9 0 -1\n3 9 0 -1\n4 9 0 -1\n5 9 0 -1\n6 9 0 -1\n7 9 0 -1\n8 9 0 -1\nDRAGON_BODIES 2\nA 0 5 6 W 1\nA 0 6 6 W 0\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w . . w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w\nw w w w w w w w\nw w w w w w w w\nw w w w . w w w\nw w w w . w w w\nw w w w w w w w\nw w w w w w w w\nw w w w w w w w\n"
+    ],
+    "expected_actions": [
+      "MOVE E",
+      "MOVE S",
+      "MOVE W",
+      "MOVE N",
+      "MOVE E",
+      "MOVE S",
+      "MOVE W",
+      "MOVE N"
+    ]
+  }
+]

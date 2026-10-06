@@ -1,0 +1,40 @@
+{
+  "repository_url": "https://github.com/unswcpmsoc/unswbc",
+  "commit_sha": "79e22e7950e334711574bcc1166b3973153ccc4f",
+  "commit_date_utc": "2026-10-02T04:39:14Z",
+  "retrieved_utc": "2026-10-06T12:00:37.418658+00:00",
+  "license": "MIT",
+  "source_files_unchanged": true,
+  "source_bundle_sha256": "49ab706103223f8b0399e102072133de70cb63c78caf9bce29e4e892986e1eeb",
+  "files": [
+    {
+      "local_path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/unswcpmsoc/unswbc/79e22e7950e334711574bcc1166b3973153ccc4f/LICENSE",
+      "sha256": "310ed152221bbde3a8899aa79a0bf4567ecf08e1fc1e884c77c84470e68afb0d",
+      "bytes": 1068
+    },
+    {
+      "local_path": "bot.toml",
+      "upstream_path": "examples/murder/bot.toml",
+      "url": "https://raw.githubusercontent.com/unswcpmsoc/unswbc/79e22e7950e334711574bcc1166b3973153ccc4f/examples/murder/bot.toml",
+      "sha256": "664c2effa2195352ea7e2df494a6a4cb7cd618f2597ab2bf64aca80822e9c9ce",
+      "bytes": 88
+    },
+    {
+      "local_path": "helper.hpp",
+      "upstream_path": "examples/murder/helper.hpp",
+      "url": "https://raw.githubusercontent.com/unswcpmsoc/unswbc/79e22e7950e334711574bcc1166b3973153ccc4f/examples/murder/helper.hpp",
+      "sha256": "9f280e464c73997754958540c4032d0f410dd7ca318633dcdba52b53d3f97ff6",
+      "bytes": 21049
+    },
+    {
+      "local_path": "main.cpp",
+      "upstream_path": "examples/murder/main.cpp",
+      "url": "https://raw.githubusercontent.com/unswcpmsoc/unswbc/79e22e7950e334711574bcc1166b3973153ccc4f/examples/murder/main.cpp",
+      "sha256": "c2955449b0eaa31a8c4492e1b2cf8e988a993e84d962284bea7eaa28ff500dc2",
+      "bytes": 4595
+    }
+  ],
+  "external_code_execution": "None at retrieval. Repository scripts/build hooks are not used."
+}
