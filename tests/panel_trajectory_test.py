@@ -90,6 +90,13 @@ class PanelTrajectoryTest(unittest.TestCase):
         self.assertFalse(report["details"]["gross_ledger_verified"])
         self.assertIsNone(report["details"]["gross_resources"]["A"]["food_collected"])
 
+    def test_surviving_action_missing_neutral_updates_refuses_gross(self):
+        data = fixture();data["events"] += action(0, ["W", "W"])
+        data["events"] += [update(0, -1, 1)]
+        report = self.run_data(data)
+        self.assertFalse(report["details"]["gross_ledger_verified"])
+        self.assertTrue(any("missing successful" in issue for issue in report["details"]["gross_ledger_issues"]))
+
     def test_clearance_without_known_pearl_refuses_gross(self):
         data = fixture();data["events"] += action(0, ["W"])
         data["events"] += [pearl(-1, 0, False), update(0, -1, 2)]
