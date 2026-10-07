@@ -1,0 +1,170 @@
+{
+  "scope": "Describe what the frozen external discovery opponents actually exercise.\n\nNo extra matches, opponent modifications, or adoption threshold changes.\nOutcome exposure is descriptive and conditioned on both arms being eligible.\n",
+  "driver": {
+    "path": "tools/round2_benchmark_audit.py",
+    "sha256": "03e3509e72916ecf9fad76a89c72c7efd5a0770b15324ea1db75796e2b76d090"
+  },
+  "matches_run": 0,
+  "frozen_source_read": [
+    {
+      "path": "external-benchmarks/sas-987/main.cpp",
+      "sha256": "b25ec9bcc14cab7ffc0878974405b5b37d0072f5278978d88f202d1cdc9accfe"
+    },
+    {
+      "path": "external-benchmarks/official-murder/main.cpp",
+      "sha256": "c2955449b0eaa31a8c4492e1b2cf8e988a993e84d962284bea7eaa28ff500dc2"
+    },
+    {
+      "path": "external-benchmarks/kgts-protocol-adapted/source/main.py",
+      "sha256": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444"
+    }
+  ],
+  "groups": [
+    {
+      "opponent": "official-murder",
+      "comparison": {
+        "path": "test-results/round2-resource-v2-compare.json",
+        "sha256": "b49ebaeb0bd59275bc218cde3c86e72f93abc8625cc9fd3af7645ac8335c1104"
+      },
+      "formal_pairs": 44,
+      "eligible_pairs": 3,
+      "ineligible_pairs": 41,
+      "baseline": {
+        "eligible_outcomes": {
+          "win": 3
+        },
+        "terminal_scoring_axes": {
+          "elimination": 3
+        },
+        "rival_queen_alive": 0,
+        "both_queens_alive": 0,
+        "queen_alive_pair_keys": []
+      },
+      "candidate": {
+        "eligible_outcomes": {
+          "win": 3
+        },
+        "terminal_scoring_axes": {
+          "elimination": 3
+        },
+        "rival_queen_alive": 0,
+        "both_queens_alive": 0,
+        "queen_alive_pair_keys": []
+      }
+    },
+    {
+      "opponent": "sas-987",
+      "comparison": {
+        "path": "test-results/round2-resource-v2-compare.json",
+        "sha256": "b49ebaeb0bd59275bc218cde3c86e72f93abc8625cc9fd3af7645ac8335c1104"
+      },
+      "formal_pairs": 44,
+      "eligible_pairs": 44,
+      "ineligible_pairs": 0,
+      "baseline": {
+        "eligible_outcomes": {
+          "win": 43,
+          "loss": 1
+        },
+        "terminal_scoring_axes": {
+          "elimination": 11,
+          "longest": 16,
+          "queen": 16,
+          "total": 1
+        },
+        "rival_queen_alive": 2,
+        "both_queens_alive": 2,
+        "queen_alive_pair_keys": [
+          [
+            "discovery",
+            "sas-987",
+            "portals",
+            2026100701,
+            "A"
+          ],
+          [
+            "discovery",
+            "sas-987",
+            "portals",
+            2026100701,
+            "B"
+          ]
+        ]
+      },
+      "candidate": {
+        "eligible_outcomes": {
+          "win": 43,
+          "loss": 1
+        },
+        "terminal_scoring_axes": {
+          "longest": 16,
+          "elimination": 10,
+          "queen": 17,
+          "total": 1
+        },
+        "rival_queen_alive": 2,
+        "both_queens_alive": 2,
+        "queen_alive_pair_keys": [
+          [
+            "discovery",
+            "sas-987",
+            "portals",
+            2026100701,
+            "A"
+          ],
+          [
+            "discovery",
+            "sas-987",
+            "portals",
+            2026100701,
+            "B"
+          ]
+        ]
+      }
+    },
+    {
+      "opponent": "kgts-protocol-adapted",
+      "comparison": {
+        "path": "test-results/round2-resource-v2-kgts-compare.json",
+        "sha256": "f1d15f2ce325419383170d92a9cea3dbbc486b326ad1761842e4a327d3fb4122"
+      },
+      "formal_pairs": 44,
+      "eligible_pairs": 44,
+      "ineligible_pairs": 0,
+      "baseline": {
+        "eligible_outcomes": {
+          "win": 42,
+          "loss": 2
+        },
+        "terminal_scoring_axes": {
+          "elimination": 16,
+          "longest": 13,
+          "queen": 15
+        },
+        "rival_queen_alive": 0,
+        "both_queens_alive": 0,
+        "queen_alive_pair_keys": []
+      },
+      "candidate": {
+        "eligible_outcomes": {
+          "win": 42,
+          "loss": 2
+        },
+        "terminal_scoring_axes": {
+          "elimination": 17,
+          "longest": 13,
+          "queen": 14
+        },
+        "rival_queen_alive": 0,
+        "both_queens_alive": 0,
+        "queen_alive_pair_keys": []
+      }
+    }
+  ],
+  "limits": [
+    "A terminal Queen exposure count does not measure all intermediate Queen threats.",
+    "The same maps and opponents recur; these are not independent representative ladder samples.",
+    "Weak frozen opponents remain useful regressions but do not establish stronger live-opponent performance.",
+    "No missing or ineligible match is converted into a reliable strength observation."
+  ]
+}

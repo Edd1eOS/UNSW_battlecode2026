@@ -8,7 +8,7 @@
 
 地形版本能修正长死端选择，但Longest仍有明显代价；资源修正版修复跨窗口估值不一致，Queen收益却没有跨对手成立。没有候选通过采用门槛，原176场留出未开，本轮没有上传或切换线上v66（平台v14）。线上16:16左右核实1536分，自动排位变化不计作离线候选效果。
 
-见[第二轮回顾](docs/oct7-round2-review.md)、[算法原理](docs/oct7-round2-mechanisms.md)、[两例完整资本账](docs/oct7-round2-case-ledgers.json)及[逐场证据清单](docs/oct7-round2-evidence-manifest.json)。下方各轮统计保留原时间与范围。
+见[第二轮回顾](docs/oct7-round2-review.md)、[算法原理](docs/oct7-round2-mechanisms.md)、[外部基准盲区](docs/oct7-round2-benchmark-audit.md)、[两例完整资本账](docs/oct7-round2-case-ledgers.json)及[逐场证据清单](docs/oct7-round2-evidence-manifest.json)。下方各轮统计保留原时间与范围。
 
 ## 10月7日：通用算法与外部验证
 

@@ -1,5 +1,5 @@
 {
-  "recorded_utc": "2026-10-07T08:30:20.251201+00:00",
+  "recorded_utc": "2026-10-07T08:36:05.800175+00:00",
   "base_commit": "556a0551bb07a1a398b038b7d03610c4842669c2",
   "scope": "Bounded collector for the second Oct7 round; no matches or promotion.\n\nThe original two-opponent and KGTS collectors remain unchanged. References from\nthe preceding round are identified separately and excluded from new-match counts.\n",
   "new_completed_matches": 616,
@@ -77287,6 +77287,16 @@
       "sha256": "9d5358a187abcdac0252c5708a8cd0128aa5ae8b7c7bf5f6029c0369aa81e4ef"
     },
     {
+      "path": "docs/oct7-round2-benchmark-audit.json",
+      "bytes": 4923,
+      "sha256": "1e508991dcfd582139bb1cbe279890e5e3d3cb6980576cdf6e18095fe8ed0317"
+    },
+    {
+      "path": "docs/oct7-round2-benchmark-audit.md",
+      "bytes": 3903,
+      "sha256": "599df017834ba1e9a1a8ab9517ff8ab700b50e27927425a4bfd0491fcd084b01"
+    },
+    {
       "path": "docs/oct7-round2-case-ledgers.json",
       "bytes": 26540,
       "sha256": "f241d1501f92e125d3f724428856abec8b4d1e47b9e82a153a2a545e74020f04"
@@ -77308,13 +77318,13 @@
     },
     {
       "path": "docs/oct7-round2-review.md",
-      "bytes": 9517,
-      "sha256": "c38e6523d835e74ecd48b1843d3ed4f21c45d608ea3beb3147bd10536eae5ae9"
+      "bytes": 9970,
+      "sha256": "9d9cc8802d3ddfb6385ab42324c2826051b3d95f970732007cb66a7e552bee4e"
     },
     {
       "path": "README.md",
-      "bytes": 25319,
-      "sha256": "c19d3706f1fd7b2b81c285a6ea880e5c1fd2d4df5cd90fc9d2d05fd67089e839"
+      "bytes": 25379,
+      "sha256": "ad28cc66b711b17a916d4e9624aa1a2b597f88444e71d200143a8c7bc942d7e6"
     },
     {
       "path": "test-results/round2-evidence-compare.json",
@@ -77790,6 +77800,11 @@
       "path": "tests/round2_topology_v2_physics_test.cpp",
       "bytes": 20231,
       "sha256": "913c8c026ce215640d598a65aaad969a33843f0967ac254dc237c5ee35c92aee"
+    },
+    {
+      "path": "tools/round2_benchmark_audit.py",
+      "bytes": 3415,
+      "sha256": "03e3509e72916ecf9fad76a89c72c7efd5a0770b15324ea1db75796e2b76d090"
     },
     {
       "path": "tools/round2_case_ledger.py",
