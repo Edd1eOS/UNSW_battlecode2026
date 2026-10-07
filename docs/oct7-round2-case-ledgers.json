@@ -1,0 +1,817 @@
+{
+  "scope": "Explain two exposed resource-V2 outcomes with exact Queen capital ledgers.\n\nPost-outcome diagnostic cases; no new matches and no general strength inference.\n",
+  "matches_run": 0,
+  "comparison_sha256": "f1d15f2ce325419383170d92a9cea3dbbc486b326ad1761842e4a327d3fb4122",
+  "action_audit_sha256": "f120383d90f7239e656e4aa14b1adb6df01b6b0003359833c0718ff0fece9cd7",
+  "driver_sha256": "3dffcc7a1ca57d673a9aa5e25466d8ff90fc7f285f7cd0f4c530591b7fecdb93",
+  "trajectory_analyzer_sha256": "a0cc72d967b107a66c4bf9af2dd8aff9e8b7bb993e7f3eef2c8999b9be38f494",
+  "board_decoder_sha256": "1c5127d5af66e8fdf739334f16f9b2f0efa86ddf0b620748ca6a70013b7af66f",
+  "cases": [
+    {
+      "key": [
+        "discovery",
+        "kgts-protocol-adapted",
+        "australia",
+        2026100703,
+        "B"
+      ],
+      "first_divergent_action": {
+        "action_index": 2512,
+        "baseline": {
+          "round": 116,
+          "id": 3,
+          "action": {
+            "kind": "move",
+            "steps": [
+              "N",
+              "E",
+              "E"
+            ]
+          },
+          "indicator": "GENERALIST MOVE role=RESERVE food=1 paid=0 depth=6 outside=0 portal=0 budget=0 direct_contact=0 possible_birth_contact=0 next_food_est=0 goal=1724"
+        },
+        "candidate": {
+          "round": 116,
+          "id": 3,
+          "action": {
+            "kind": "move",
+            "steps": [
+              "N",
+              "N"
+            ]
+          },
+          "indicator": "GENERALIST MOVE role=RESERVE food=0 paid=0 depth=6 outside=0 portal=0 budget=0 direct_contact=0 possible_birth_contact=0 next_food_est=1 next_priority_cost=65 goal=1724 action_evidence=confirmed verified_steps=2 resource_beneficiary=1 resource_marked=1 resource_cost=0"
+        }
+      },
+      "baseline": {
+        "provenance": {
+          "result_json_sha256": "2b0d6bbbb3df149314669c0707f220243b0bd24834069329399a0853d0777790",
+          "replay_sha256": "04fc528284d53e716edc7892989fe34a8a865683dbacaa168dda3dcf4a9d256a",
+          "map_sha256": "7fccdee8a73a971bc3dc7a07b13aa56bb214f311249b942869bcc9708084d539",
+          "decoder_bundle_sha256": "c423c0a29fddeca8771bec82dbe4f883a17b6c66f81b9cf3e5290eccd29c9de6",
+          "candidate_source_bundle_sha256": "39cbf8c74f2d514ea5c0cb0b3b46fa16ef554486863427f0ebb8966f73b4c7fa",
+          "candidate_wasm_sha256": "7b2dd8a38996a93c5c3bf45526d74a366409072916000b9d2c169200d4fed40b"
+        },
+        "queen_initial_length": 4,
+        "queen_final_length": 7,
+        "food": 49,
+        "paid": 0,
+        "split_transfer": 46,
+        "death_length": 0,
+        "balance_residual": 0,
+        "queen_deaths": [],
+        "omniscient_replay_neighborhoods_not_bot_input": [],
+        "last_queen_actions_at_each_death": [],
+        "whole_metrics": {
+          "dragon_count": 49,
+          "queen_length": 7,
+          "longest_dragon": 61,
+          "total_length": 571,
+          "queen_margin": 7,
+          "longest_margin": 49,
+          "total_margin": 526,
+          "net_body_update_growth": 720,
+          "death_length_loss": 175,
+          "net_retained_length": 545,
+          "queen_net_retained_length": 3,
+          "food": 732,
+          "paid": 12,
+          "successful_updates": 17832,
+          "unique_movement_head_cells": 3285,
+          "unique_turn_window_cells": 4096,
+          "queen_death_length": 0,
+          "queen_deaths": 0,
+          "unique_longest_deaths": 0,
+          "unique_longest_death_length": 0,
+          "unique_longest_score_loss": 0,
+          "unique_longest_lead_reversals": 0,
+          "splits": 123,
+          "queen_split_transfer": 46,
+          "queen_net_update_growth": 49,
+          "food_per_1000_successful_updates": 41.049798115746974,
+          "net_income_per_1000_successful_updates": 40.376850605652756,
+          "net_income": 720,
+          "queen_food_collected": 49,
+          "queen_paid_step_cost": 0,
+          "leading_rounds": 493,
+          "lead_losses": 0,
+          "longest_continuous_lead": 493
+        }
+      },
+      "candidate": {
+        "provenance": {
+          "result_json_sha256": "036927535dd696aa4fdadc5fac937ee20bdaaf5287d3b10c515f292bfff7614b",
+          "replay_sha256": "6d7b37bc57eb704ca77a7806a2dcfb7b13051eebbe049f0ed9506f3c73674757",
+          "map_sha256": "7fccdee8a73a971bc3dc7a07b13aa56bb214f311249b942869bcc9708084d539",
+          "decoder_bundle_sha256": "c423c0a29fddeca8771bec82dbe4f883a17b6c66f81b9cf3e5290eccd29c9de6",
+          "candidate_source_bundle_sha256": "e1c16e8049a1ba5783f3ae72fc9bed5abbf33d160c76f9c5955c98ce6d164842",
+          "candidate_wasm_sha256": "5450434f420403f02a102931d5ce4536285de8445ea06de82bd249271d2f795e"
+        },
+        "queen_initial_length": 4,
+        "queen_final_length": 23,
+        "food": 48,
+        "paid": 5,
+        "split_transfer": 24,
+        "death_length": 0,
+        "balance_residual": 0,
+        "queen_deaths": [],
+        "omniscient_replay_neighborhoods_not_bot_input": [],
+        "last_queen_actions_at_each_death": [],
+        "whole_metrics": {
+          "dragon_count": 42,
+          "queen_length": 23,
+          "longest_dragon": 51,
+          "total_length": 527,
+          "queen_margin": 23,
+          "longest_margin": 36,
+          "total_margin": 500,
+          "net_body_update_growth": 680,
+          "death_length_loss": 179,
+          "net_retained_length": 501,
+          "queen_net_retained_length": 19,
+          "food": 696,
+          "paid": 16,
+          "successful_updates": 18458,
+          "unique_movement_head_cells": 3141,
+          "unique_turn_window_cells": 4025,
+          "queen_death_length": 0,
+          "queen_deaths": 0,
+          "unique_longest_deaths": 0,
+          "unique_longest_death_length": 0,
+          "unique_longest_score_loss": 0,
+          "unique_longest_lead_reversals": 0,
+          "splits": 111,
+          "queen_split_transfer": 24,
+          "queen_net_update_growth": 43,
+          "food_per_1000_successful_updates": 37.70722721855022,
+          "net_income_per_1000_successful_updates": 36.840394408928375,
+          "net_income": 680,
+          "queen_food_collected": 48,
+          "queen_paid_step_cost": 5,
+          "leading_rounds": 493,
+          "lead_losses": 0,
+          "longest_continuous_lead": 493
+        }
+      }
+    },
+    {
+      "key": [
+        "discovery",
+        "kgts-protocol-adapted",
+        "big_empty",
+        2026100703,
+        "A"
+      ],
+      "first_divergent_action": {
+        "action_index": 27976,
+        "baseline": {
+          "round": 407,
+          "id": 97,
+          "action": {
+            "kind": "move",
+            "steps": [
+              "S",
+              "E"
+            ]
+          },
+          "indicator": "GENERALIST MOVE role=HARVEST food=1 paid=0 depth=6 outside=0 portal=0 budget=0 direct_contact=0 possible_birth_contact=0 next_food_est=1 goal=2589"
+        },
+        "candidate": {
+          "round": 407,
+          "id": 97,
+          "action": {
+            "kind": "move",
+            "steps": [
+              "E",
+              "E"
+            ]
+          },
+          "indicator": "GENERALIST MOVE role=HARVEST food=1 paid=0 depth=6 outside=0 portal=0 budget=0 direct_contact=0 possible_birth_contact=0 next_food_est=0 next_priority_cost=0 goal=2589 action_evidence=confirmed verified_steps=2 resource_beneficiary=364 resource_marked=1 resource_cost=0"
+        }
+      },
+      "baseline": {
+        "provenance": {
+          "result_json_sha256": "2c3fc5a8a5fbf8b2acace6244462a35f895ae6fe1354ce657b3a9a31aa4044cf",
+          "replay_sha256": "4ef2feb576390838783be8479072e061bdec7fc2c5228498028d00ccd692c036",
+          "map_sha256": "6cb3b7be72a4e27ed19363e9009d46742851709f701e61d73b56437314fdd827",
+          "decoder_bundle_sha256": "c423c0a29fddeca8771bec82dbe4f883a17b6c66f81b9cf3e5290eccd29c9de6",
+          "candidate_source_bundle_sha256": "39cbf8c74f2d514ea5c0cb0b3b46fa16ef554486863427f0ebb8966f73b4c7fa",
+          "candidate_wasm_sha256": "7b2dd8a38996a93c5c3bf45526d74a366409072916000b9d2c169200d4fed40b"
+        },
+        "queen_initial_length": 6,
+        "queen_final_length": 58,
+        "food": 112,
+        "paid": 0,
+        "split_transfer": 60,
+        "death_length": 0,
+        "balance_residual": 0,
+        "queen_deaths": [],
+        "omniscient_replay_neighborhoods_not_bot_input": [],
+        "last_queen_actions_at_each_death": [],
+        "whole_metrics": {
+          "dragon_count": 63,
+          "queen_length": 58,
+          "longest_dragon": 136,
+          "total_length": 1607,
+          "queen_margin": 58,
+          "longest_margin": 123,
+          "total_margin": 1571,
+          "net_body_update_growth": 2146,
+          "death_length_loss": 557,
+          "net_retained_length": 1589,
+          "queen_net_retained_length": 52,
+          "food": 2174,
+          "paid": 28,
+          "successful_updates": 34421,
+          "unique_movement_head_cells": 4094,
+          "unique_turn_window_cells": 4096,
+          "queen_death_length": 0,
+          "queen_deaths": 0,
+          "unique_longest_deaths": 0,
+          "unique_longest_death_length": 0,
+          "unique_longest_score_loss": 0,
+          "unique_longest_lead_reversals": 0,
+          "splits": 221,
+          "queen_split_transfer": 60,
+          "queen_net_update_growth": 112,
+          "food_per_1000_successful_updates": 63.159117980302725,
+          "net_income_per_1000_successful_updates": 62.34566107899248,
+          "net_income": 2146,
+          "queen_food_collected": 112,
+          "queen_paid_step_cost": 0,
+          "leading_rounds": 500,
+          "lead_losses": 0,
+          "longest_continuous_lead": 500
+        }
+      },
+      "candidate": {
+        "provenance": {
+          "result_json_sha256": "3b62ef2a5a1f259425e04c33a4a6b34e43edca929b30728a9fb46cd37175dead",
+          "replay_sha256": "bf9a7d0d40621ff6b5c830e5b4524dfec02152827a89165438cebbb460faea05",
+          "map_sha256": "6cb3b7be72a4e27ed19363e9009d46742851709f701e61d73b56437314fdd827",
+          "decoder_bundle_sha256": "c423c0a29fddeca8771bec82dbe4f883a17b6c66f81b9cf3e5290eccd29c9de6",
+          "candidate_source_bundle_sha256": "e1c16e8049a1ba5783f3ae72fc9bed5abbf33d160c76f9c5955c98ce6d164842",
+          "candidate_wasm_sha256": "5450434f420403f02a102931d5ce4536285de8445ea06de82bd249271d2f795e"
+        },
+        "queen_initial_length": 6,
+        "queen_final_length": 0,
+        "food": 108,
+        "paid": 0,
+        "split_transfer": 66,
+        "death_length": 48,
+        "balance_residual": 0,
+        "queen_deaths": [
+          {
+            "round": 486,
+            "event_index": 214477,
+            "turn_id": 0,
+            "turn_serial": 33110,
+            "id": 0,
+            "team": "A",
+            "reason": "other_body",
+            "last_recorded_length": 48,
+            "is_queen": true,
+            "was_longest": false,
+            "was_unique_longest": false,
+            "longest_length_loss": 0,
+            "before": {
+              "scores": {
+                "A": {
+                  "dragon_count": 64,
+                  "queen_length": 48,
+                  "longest_dragon": 125,
+                  "total_length": 1447
+                },
+                "B": {
+                  "dragon_count": 1,
+                  "queen_length": 0,
+                  "longest_dragon": 7,
+                  "total_length": 7
+                }
+              },
+              "leader": "A",
+              "criterion": "queen",
+              "margin": 48,
+              "delta": {
+                "dragon_count": 63,
+                "queen_length": 48,
+                "longest_dragon": 118,
+                "total_length": 1440
+              }
+            },
+            "after": {
+              "scores": {
+                "A": {
+                  "dragon_count": 63,
+                  "queen_length": 0,
+                  "longest_dragon": 125,
+                  "total_length": 1399
+                },
+                "B": {
+                  "dragon_count": 1,
+                  "queen_length": 0,
+                  "longest_dragon": 7,
+                  "total_length": 7
+                }
+              },
+              "leader": "A",
+              "criterion": "longest",
+              "margin": 118,
+              "delta": {
+                "dragon_count": 62,
+                "queen_length": 0,
+                "longest_dragon": 118,
+                "total_length": 1392
+              }
+            },
+            "erased_own_lead_immediately": false,
+            "reversed_own_lead_immediately": false
+          }
+        ],
+        "omniscient_replay_neighborhoods_not_bot_input": [
+          {
+            "round": 481,
+            "head": [
+              58,
+              41
+            ],
+            "length": 48,
+            "neighbors": [
+              {
+                "direction": "N",
+                "target": [
+                  58,
+                  40
+                ],
+                "occupants": []
+              },
+              {
+                "direction": "E",
+                "target": [
+                  59,
+                  41
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 7,
+                    "length": 16,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "S",
+                "target": [
+                  58,
+                  42
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 9,
+                    "length": 16,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "W",
+                "target": [
+                  57,
+                  41
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 1,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "round": 482,
+            "head": [
+              58,
+              40
+            ],
+            "length": 48,
+            "neighbors": [
+              {
+                "direction": "N",
+                "target": [
+                  58,
+                  39
+                ],
+                "occupants": []
+              },
+              {
+                "direction": "E",
+                "target": [
+                  59,
+                  40
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 10,
+                    "length": 16,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "S",
+                "target": [
+                  58,
+                  41
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 1,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "W",
+                "target": [
+                  57,
+                  40
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 3,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "round": 483,
+            "head": [
+              58,
+              39
+            ],
+            "length": 48,
+            "neighbors": [
+              {
+                "direction": "N",
+                "target": [
+                  58,
+                  38
+                ],
+                "occupants": []
+              },
+              {
+                "direction": "E",
+                "target": [
+                  59,
+                  39
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 12,
+                    "length": 17,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "S",
+                "target": [
+                  58,
+                  40
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 1,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "W",
+                "target": [
+                  57,
+                  39
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 5,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "round": 484,
+            "head": [
+              58,
+              38
+            ],
+            "length": 48,
+            "neighbors": [
+              {
+                "direction": "N",
+                "target": [
+                  58,
+                  37
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 13,
+                    "length": 18,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "E",
+                "target": [
+                  59,
+                  38
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 15,
+                    "length": 18,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "S",
+                "target": [
+                  58,
+                  39
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 1,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "W",
+                "target": [
+                  57,
+                  38
+                ],
+                "occupants": []
+              }
+            ]
+          },
+          {
+            "round": 485,
+            "head": [
+              57,
+              38
+            ],
+            "length": 48,
+            "neighbors": [
+              {
+                "direction": "N",
+                "target": [
+                  57,
+                  37
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 13,
+                    "length": 18,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "E",
+                "target": [
+                  58,
+                  38
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 1,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "S",
+                "target": [
+                  57,
+                  39
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 7,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "W",
+                "target": [
+                  56,
+                  38
+                ],
+                "occupants": []
+              }
+            ]
+          },
+          {
+            "round": 486,
+            "head": [
+              56,
+              38
+            ],
+            "length": 48,
+            "neighbors": [
+              {
+                "direction": "N",
+                "target": [
+                  56,
+                  37
+                ],
+                "occupants": [
+                  {
+                    "id": 483,
+                    "team": "A",
+                    "body_index": 13,
+                    "length": 18,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "E",
+                "target": [
+                  57,
+                  38
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 1,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "S",
+                "target": [
+                  56,
+                  39
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 9,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              },
+              {
+                "direction": "W",
+                "target": [
+                  55,
+                  38
+                ],
+                "occupants": [
+                  {
+                    "id": 0,
+                    "team": "A",
+                    "body_index": 13,
+                    "length": 48,
+                    "same_team": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "last_queen_actions_at_each_death": [
+          [
+            {
+              "round": 484,
+              "id": 0,
+              "action": {
+                "kind": "move",
+                "steps": [
+                  "W"
+                ]
+              },
+              "indicator": "GENERALIST MOVE role=Q food=0 paid=0 depth=1 outside=0 portal=0 budget=0 direct_contact=0 possible_birth_contact=0 next_food_est=0 next_priority_cost=0 goal=2233 action_evidence=confirmed verified_steps=1 resource_beneficiary=-1 resource_marked=0 resource_cost=0"
+            },
+            {
+              "round": 485,
+              "id": 0,
+              "action": {
+                "kind": "move",
+                "steps": [
+                  "W"
+                ]
+              },
+              "indicator": "GENERALIST MOVE role=Q food=0 paid=0 depth=0 outside=0 portal=0 budget=0 direct_contact=0 possible_birth_contact=0 next_food_est=0 next_priority_cost=0 goal=2233 action_evidence=confirmed verified_steps=1 resource_beneficiary=-1 resource_marked=0 resource_cost=0"
+            },
+            {
+              "round": 486,
+              "id": 0,
+              "action": {
+                "kind": "move",
+                "steps": [
+                  "N"
+                ]
+              },
+              "indicator": "GENERALIST FALLBACK loss_min no_confirmed_escape action_evidence=rejected reason=8"
+            }
+          ]
+        ],
+        "whole_metrics": {
+          "dragon_count": 63,
+          "queen_length": 0,
+          "longest_dragon": 131,
+          "total_length": 1476,
+          "queen_margin": 0,
+          "longest_margin": 124,
+          "total_margin": 1469,
+          "net_body_update_growth": 2342,
+          "death_length_loss": 884,
+          "net_retained_length": 1458,
+          "queen_net_retained_length": -6,
+          "food": 2375,
+          "paid": 33,
+          "successful_updates": 34734,
+          "unique_movement_head_cells": 4096,
+          "unique_turn_window_cells": 4096,
+          "queen_death_length": 48,
+          "queen_deaths": 1,
+          "unique_longest_deaths": 1,
+          "unique_longest_death_length": 132,
+          "unique_longest_score_loss": 21,
+          "unique_longest_lead_reversals": 0,
+          "splits": 207,
+          "queen_split_transfer": 66,
+          "queen_net_update_growth": 108,
+          "food_per_1000_successful_updates": 68.37680658720562,
+          "net_income_per_1000_successful_updates": 67.42672885357287,
+          "net_income": 2342,
+          "queen_food_collected": 108,
+          "queen_paid_step_cost": 0,
+          "leading_rounds": 500,
+          "lead_losses": 0,
+          "longest_continuous_lead": 500
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Rounds are zero based.",
+    "A first different action and later death do not isolate the causal mechanism across diverged games.",
+    "Queen final growth may come from retaining split capital; food collection is reported independently."
+  ]
+}

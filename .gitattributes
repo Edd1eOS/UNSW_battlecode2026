@@ -71,3 +71,8 @@ tests/emergency*.cpp -text
 README.md -text
 .gitattributes -text
 .gitignore -text
+opponents/generalist-evidence-v*/** -text
+opponents/generalist-topology-v*/** -text
+opponents/generalist-resource-priority-v*/** -text
+tools/round2_* -text
+tests/round2_* -text
