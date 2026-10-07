@@ -76,3 +76,15 @@ opponents/generalist-topology-v*/** -text
 opponents/generalist-resource-priority-v*/** -text
 tools/round2_* -text
 tests/round2_* -text
+opponents/colony-lifecycle-v*/** -text
+opponents/capital-transfer-v*/** -text
+opponents/adversarial-reply-v*/** -text
+tools/highrank_* -text
+tools/capital_transfer_* -text
+tools/queen_contact_audit.py -text
+tools/reply_physics_contract.py -text
+tools/recover_disk_full_panel.py -text
+tests/highrank_study_test.py -text
+tests/colony_lifecycle_test.cpp -text
+tests/capital_transfer_test.cpp -text
+tests/reply_search*_test.cpp -text
