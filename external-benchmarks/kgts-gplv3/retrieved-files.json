@@ -1,0 +1,58 @@
+[
+  {
+    "upstream_path": "LICENSE",
+    "local_path": "LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/LICENSE"
+  },
+  {
+    "upstream_path": "README.md",
+    "local_path": "README.md",
+    "sha256": "9f52182b5820c63438ac3761bdc13e9246f2ba3a0cab5ce2843286fdfe649d1c",
+    "bytes": 2775,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/README.md"
+  },
+  {
+    "upstream_path": "README2.md",
+    "local_path": "README2.md",
+    "sha256": "f61f6ec812c68cb2a613a0a17366fccb5b73560700818c0d293a7504a880f58d",
+    "bytes": 4344,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/README2.md"
+  },
+  {
+    "upstream_path": "ideas.md",
+    "local_path": "ideas.md",
+    "sha256": "6430032739a5900190a3b9486a54692adb4aef58a002381b1e7c3bf6781cec89",
+    "bytes": 86,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/ideas.md"
+  },
+  {
+    "upstream_path": "bots/main/bot.toml",
+    "local_path": "source/bot.toml",
+    "sha256": "6ea1cbc15f4a72ace4442cf622b650a72c1a9e338024ef168939449cf4c3d532",
+    "bytes": 47,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/bot.toml"
+  },
+  {
+    "upstream_path": "bots/main/main.py",
+    "local_path": "source/main.py",
+    "sha256": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444",
+    "bytes": 8678,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/main.py"
+  },
+  {
+    "upstream_path": "bots/main/helper.py",
+    "local_path": "source/helper.py",
+    "sha256": "344e5a5fb9b0e77102c052c7d4ea033dae5a76c05a3ae09992e3a1e291a6149a",
+    "bytes": 22161,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/helper.py"
+  },
+  {
+    "upstream_path": "bots/main/main_actual_template.py",
+    "local_path": "source/main_actual_template.py",
+    "sha256": "371a025598fe372c07ed76650146ac0e38118b97f07cbdd29e5701679c7553c4",
+    "bytes": 1021,
+    "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/main_actual_template.py"
+  }
+]

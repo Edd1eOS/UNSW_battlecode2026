@@ -1,0 +1,30 @@
+# October 7: conditional Queen traffic protection
+
+`opponents/generalist-cooperation-v1` is an independent copy of frozen generalist V5. It contains no exploration or investment changes. Its new `cooperation.hpp` uses only the acting dragon's current legal view and previously observed portal mappings.
+
+**A — preserve a visible friendly Queen's exits.** For each ordinary MOVE with complete predicted own body, compare the Queen's currently known, unoccupied, nonreverse first steps with the same steps after that body moves. Other visible bodies remain a conditional current snapshot. Losing every known exit costs 1,400 utility points. An unresolved portal or destination outside either actor's current vision prevents claiming that every exit is closed. This is a current occupancy counterfactual, not a prediction of the Queen's next intention.
+
+When every generated ordinary MOVE seals these exits, a non-Queen with other surviving units may propose stationary SPLIT 2, including a reserve. It requires complete original body, split affordability, preserved Queen exits while stationary, and at least one currently visible, resolved child free step that remains legal against the old child neck and the explicit parent body and preserves those exits. The split conserves total body; it does not clear the entire corridor. Unknown-portal candidates remain available and retain their normal ranking. The proposal's utility is 900 less existing risk and reserve costs; it still undergoes normal parent continuation assessment.
+
+**B — avoid an unobservable portal arrival.** A Queen endpoint on a visible portal mouth costs 120 utility points when the other landing is unobserved or unresolved. This is possible traffic from any dragon, not a certain enemy collision. It does not prohibit a unique escape. Visible partner occupancy stays governed by existing collision checks.
+
+Both adjustments remain inside V5's existing ordering: visible-head contact, continuation evidence grade, possible birth contact, then utility. They cannot force a lower safety tier to outrank a higher one. `COOPERATION_DISABLE_EGRESS` and `COOPERATION_DISABLE_ARRIVAL` separately disable A and B. The test-only runtime switch builds historical V5 state before isolated counterfactual probes.
+
+## Actual discovery counterfactuals
+
+The legal replay packets are exported by `tools/oct7_exploration_death_audit.py`; provenance and exact input hashes are in `test-results/oct7-exploration-causal-ro/proof.json`. They reconstruct observations from spawn or actual split birth, with no sonar messages in these replays. `tests/cooperation_causal_test.cpp` reproduces all 215 historical worker-11 actions in Portals A and all 147 Queen-1 actions in Portals B, then tests a single alternative on copied state. No historical packet is fed to the alternative branch after divergence.
+
+* A, seed 2026100701, raw round 182: worker 11's historical NW placed its neck at (13,4), sealing Queen 0's only ordinary exit after she reached (14,4). The Queen subsequently self-collided in fallback at round 183. Cooperation proposes SPLIT 2; the stationary parent preserves (13,4), and reversed-tail child at (13,8) has certified free W to (12,8). Worker S is an unresolved portal, not a proven wall. This test proves a legal local rescue proposal, not survival of the subsequent match. The parent could later be trapped by the Queen; the child will replan and is not committed to the certified W step. A negative fixture blocks every nonreverse child exit and correctly rejects the rescue proposal. Disabling A restores historical NW.
+* B, same seed, raw round 146: Queen 1 historically moved E from (21,4) to portal landing (22,4). Off-view reserve 30 returned through the known portal and both heads died. Cooperation chooses N to (21,3), with the same full depth-8 continuation grade. Disabling B restores E. The reserve's return was its only ordinary exit; no worker hard portal ban is introduced.
+
+## Verification and limits
+
+Four C++ scenario packages pass through the official judge compiler and WASM runtime, including inherited payment, old-body, pending-portal, split-child and birth-contact assertions. These are model assertions, not actual engine match experiments. Default and each separate mechanism ablation pass; actual A/B continuous legal packets and their separate ablations also pass.
+
+`generalist-cooperation-v1-portal-protocol.json` covers 35 cases / 42 frames. `generalist-cooperation-v1-extra-physics-protocol.json` covers five cases / five frames, including actual portal tracking, known boundary portals and STAR birth contact. All 40 cases / 47 frames pass; peak measured CPU is 8,671,124 points. Both protocol packages use WASM SHA-256 `e1a720e3f8faf6d0504f0b9a6d58910cb0b59cc5dd10a9eb444dfd73d4cce8f7`. Exact source and evidence hashes are frozen in `test-results/generalist-cooperation-v1-freeze.json`. No matches or uploads were run by this work.
+
+The exit signal is conditional on current observations and frozen foreign occupancy. It cannot protect an invisible Queen, guarantee a child policy or forecast unseen portal arrivals. A stationary rescue may exchange worker capital for Queen protection. Neither the local counterfactuals nor high wins against weak external mechanisms establish an online rating.
+
+## Evidence path correction (after source freeze)
+
+The new guard scenario was initially written and executed under `tests/cooperation_test.cpp`, which already belonged to the production feeding tests. Root restored that original tracked test and preserved the guard's exact bytes under `tests/cooperation_guard_test.cpp`. Its SHA-256 remains `c0d61ca67b224aa2b3ceeb3cd4779769eaba3bcf7bddeda59bc9f2bc5ee5cb41`, the hash recorded against the historical path in the immutable freeze manifest. Reproduce the guard scenario using the new unique path; the frozen model-check log still names its path at execution time. This paragraph updates documentation provenance only. The candidate source, compiled binary and original freeze proof are unchanged; the freeze manifest's document hash refers to this document before this correction.
