@@ -1,0 +1,178 @@
+{
+  "commit_sha": "b72ca9baac0e00071ac8013e238b01fe718d02b5",
+  "tested_utc": "2026-10-07T05:08:46.852119+00:00",
+  "unswbc_version": "1.2.7",
+  "source_files": {
+    "bot.toml": {
+      "sha256": "6ea1cbc15f4a72ace4442cf622b650a72c1a9e338024ef168939449cf4c3d532",
+      "bytes": 47
+    },
+    "helper.py": {
+      "sha256": "344e5a5fb9b0e77102c052c7d4ea033dae5a76c05a3ae09992e3a1e291a6149a",
+      "bytes": 22161
+    },
+    "main.py": {
+      "sha256": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444",
+      "bytes": 8678
+    },
+    "main_actual_template.py": {
+      "sha256": "371a025598fe372c07ed76650146ac0e38118b97f07cbdd29e5701679c7553c4",
+      "bytes": 1021
+    }
+  },
+  "source_bundle_sha256": "a4b7f370b3bb794dd1436472d749eae96e1330e115d67d6f3b94771d37f87605",
+  "license": "GPLv3 (upstream LICENSE)",
+  "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "runtime": "official Python WASM interpreter + guest-compiled bot bytecode; no bot-specific WASM",
+  "python_interpreter_wasm_sha256": "48342178e7ca73775b90aacd0899efed906d79bff79b961360aefe76b5f78125",
+  "driver_sha256": "e587c062bdd52c42eb741f9fdb2da7e5fb275154e1cd3eb019f30dbe09b03285",
+  "upstream_scripts_executed": false,
+  "host_import_of_upstream": false,
+  "matches_run": 0,
+  "scenarios": [
+    {
+      "name": "official_initial_protocol2",
+      "protocol": 2,
+      "turns": [
+        {
+          "input_sha256": "89a851ed873f2ac66cceb3b7fcca5285af0e586a6bc7a117e2116120d6207227",
+          "output": "",
+          "error": "exited with code 1",
+          "stderr": "Traceback (most recent call last):\n  File \"zygote.py\", line 168, in run\n  File \"main.py\", line 229, in <module>\n  File \"main.py\", line 224, in main\n  File \"helper.py\", line 599, in update\nTypeError: SonarEchoes.__init__() missing 2 required positional arguments: 'enemy' and 'enemy_head'\nTraceback (most recent call last):\n  File \"zygote.py\", line 168, in run\n  File \"main.py\", line 229, in <module>\n  File \"main.py\", line 224, in main\n  File \"helper.py\", line 599, in update\nTypeError: SonarEchoes.__init__() missing 2 required positional arguments: 'enemy' and 'enemy_head'\n",
+          "endturn_received": false,
+          "cpu_points": 0,
+          "memory_bytes": 0,
+          "passed": false
+        }
+      ],
+      "passed": false
+    },
+    {
+      "name": "already_upgraded_protocol3",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "42ff80d38168ab6a82b7c790aed9afbe35262406c3b034ef2ad4cd6a30a5caf3",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 30982666,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "fresh_child_inherited_protocol3_uint64",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "c0f3c84275c7d4d567bf9e69ee9e13875402173ed8b4eb57bd784b814500a302",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31027077,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "early_phase_queen_split2",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "24c82768ed955f898132fcc78c0134a549cc0cbf10f67f2f0921b903d6075b4a",
+          "output": "SPLIT 2\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 19617373,
+          "memory_bytes": 21561344,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "middle_phase_worker_split3",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "9fddffd4bfe421f7a6ab736ccfa7e2be0836ef009b0269c640a7f3ce1f0ae345",
+          "output": "SPLIT 3\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 19620608,
+          "memory_bytes": 21561344,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "late_phase_stops_split",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "eb892a60c2c95e86eefb91c0bbc3af92ae12ea14efeed88a5168343797194bd3",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31119724,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "64map_long_partial_body_budget",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "4fbe68fdde9e4945f92330179fd1639f525ad236ea2a665f286a9356dac8c72a",
+          "output": "SONAR N 1152921526081683474\nSONAR E 1152921526081683474\nSONAR S 1152921526081683474\nSONAR W 1152921526081683474\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31126298,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "toroidal_seam_visible_food",
+      "protocol": 3,
+      "turns": [
+        {
+          "input_sha256": "c1d52bbe5e3af79e94bc73e526ec845b6dc7808248c270f87509bad0c7e86a53",
+          "output": "SONAR N 1152921572252581908\nSONAR E 1152921572252581908\nSONAR S 1152921572252581908\nSONAR W 1152921572252581908\nMOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31001508,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "guest_bytecode_files": {
+    "helper.pyc": "a644a4d1050165025c2c92d083ae1adaf8d58a3cf70e38226e80cddf485282dd",
+    "main.pyc": "c6e1273bfbd3de1a6df1d53a075b33a446b1e909647ae10b6692e65d245f02e7",
+    "main_actual_template.pyc": "2bac26625b74a9d7480b4a9f29167455a667233e2f038434c2d8942c6408c39a"
+  },
+  "passed": false,
+  "max_measured_cpu_points": 31126298,
+  "compatibility_decision": "Original source ineligible: initial protocol2 parser fails"
+}

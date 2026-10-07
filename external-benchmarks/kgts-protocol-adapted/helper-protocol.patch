@@ -1,0 +1,38 @@
+--- upstream/helper.py
++++ protocol-adapted/helper.py
+@@ -1,3 +1,5 @@
++# Local protocol-only modification, 2026-10-07: optional ECHOES input.
++# Original GPLv3 source/commit is preserved in adjacent kgts-gplv3.
+ """
+ helper.py — wire-protocol I/O layer for a Battlecode sea-dragon bot.
+ 
+@@ -594,9 +596,16 @@
+     num_msgs = int(line.split()[1])  # NUM_MSGS <n>
+     sonar_messages = [int(_read_line()) for _ in range(num_msgs)]
+ 
++    # Protocol 2 has no ECHOES; preserve its first tile line. Protocol 3
++    # includes ECHOES after this source's previous PROTOCOL 3 reply.
+     line = _read_line()
+-    echo_parts = line.split()  # ECHOES k a ah e eh
+-    sonar_echoes = SonarEchoes(*(int(v) for v in echo_parts[1:6]))
++    first_tile_line = None
++    if line.startswith("ECHOES "):
++        echo_parts = line.split()  # ECHOES k a ah e eh
++        sonar_echoes = SonarEchoes(*(int(v) for v in echo_parts[1:6]))
++    else:
++        sonar_echoes = SonarEchoes(0, 0, 0, 0, 0)
++        first_tile_line = line
+ 
+     # 49 tile lines, row by row (row 0 = 3 north of head, col 0 = 3 west)
+     grid: List[List[Tile]] = []
+@@ -605,7 +614,9 @@
+     for _row in range(7):
+         row_tiles: List[Tile] = []
+         for _col in range(7):
+-            tx, ty, has_pearl, pearl_in = _read_line().split()
++            tile_line = first_tile_line if first_tile_line is not None else _read_line()
++            first_tile_line = None
++            tx, ty, has_pearl, pearl_in = tile_line.split()
+             tile = Tile(Position(int(tx), int(ty)), has_pearl == "1", int(pearl_in))
+             row_tiles.append(tile)
+             ordered.append(tile)

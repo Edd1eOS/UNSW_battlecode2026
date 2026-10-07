@@ -1,0 +1,371 @@
+{
+  "commit_sha": "b72ca9baac0e00071ac8013e238b01fe718d02b5",
+  "adaptation": "Only optional ECHOES parsing and first tile preservation",
+  "tested_utc": "2026-10-07T05:14:26.604662+00:00",
+  "unswbc_version": "1.2.7",
+  "source_files": {
+    "bot.toml": {
+      "sha256": "6ea1cbc15f4a72ace4442cf622b650a72c1a9e338024ef168939449cf4c3d532",
+      "bytes": 47
+    },
+    "helper.py": {
+      "sha256": "179d6d17f910f7829978dc8fb23cd794ccc1088c2fb443d367842cba6d1a0095",
+      "bytes": 22724
+    },
+    "main.py": {
+      "sha256": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444",
+      "bytes": 8678
+    },
+    "main_actual_template.py": {
+      "sha256": "371a025598fe372c07ed76650146ac0e38118b97f07cbdd29e5701679c7553c4",
+      "bytes": 1021
+    }
+  },
+  "unchanged_strategy_files": [
+    "main.py",
+    "main_actual_template.py",
+    "bot.toml"
+  ],
+  "source_bundle_sha256": "256184b8b291638a9137dfc18465c392bb80dad0f4177c165c1eec488f6dc0fe",
+  "license": "GPLv3 (preserved upstream LICENSE)",
+  "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "python_interpreter_wasm_sha256": "48342178e7ca73775b90aacd0899efed906d79bff79b961360aefe76b5f78125",
+  "bot_specific_wasm": null,
+  "driver_sha256": "3a7b3c8ecff97fe8cb677ec66b140db42450c39e9953fd03e932a9528abba410",
+  "matches_run": 0,
+  "upstream_scripts_executed": false,
+  "host_import_of_upstream": false,
+  "scenarios": [
+    {
+      "name": "official_initial_protocol2",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "89a851ed873f2ac66cceb3b7fcca5285af0e586a6bc7a117e2116120d6207227",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 30990425,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "already_upgraded_protocol3",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "42ff80d38168ab6a82b7c790aed9afbe35262406c3b034ef2ad4cd6a30a5caf3",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31055873,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "42ff80d38168ab6a82b7c790aed9afbe35262406c3b034ef2ad4cd6a30a5caf3",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 30982666,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "fresh_child_inherited_protocol3_uint64",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "c0f3c84275c7d4d567bf9e69ee9e13875402173ed8b4eb57bd784b814500a302",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31112411,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "c0f3c84275c7d4d567bf9e69ee9e13875402173ed8b4eb57bd784b814500a302",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31027077,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "early_phase_queen_split2",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "24c82768ed955f898132fcc78c0134a549cc0cbf10f67f2f0921b903d6075b4a",
+          "output": "SPLIT 2\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 19710779,
+          "memory_bytes": 21561344,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "24c82768ed955f898132fcc78c0134a549cc0cbf10f67f2f0921b903d6075b4a",
+          "output": "SPLIT 2\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 19617373,
+          "memory_bytes": 21561344,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "middle_phase_worker_split3",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "9fddffd4bfe421f7a6ab736ccfa7e2be0836ef009b0269c640a7f3ce1f0ae345",
+          "output": "SPLIT 3\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 19713352,
+          "memory_bytes": 21561344,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "9fddffd4bfe421f7a6ab736ccfa7e2be0836ef009b0269c640a7f3ce1f0ae345",
+          "output": "SPLIT 3\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 19620608,
+          "memory_bytes": 21561344,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "late_phase_stops_split",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "eb892a60c2c95e86eefb91c0bbc3af92ae12ea14efeed88a5168343797194bd3",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31198089,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "eb892a60c2c95e86eefb91c0bbc3af92ae12ea14efeed88a5168343797194bd3",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31119724,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "64map_long_partial_body_budget",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "4fbe68fdde9e4945f92330179fd1639f525ad236ea2a665f286a9356dac8c72a",
+          "output": "SONAR N 1152921526081683474\nSONAR E 1152921526081683474\nSONAR S 1152921526081683474\nSONAR W 1152921526081683474\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31207452,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "4fbe68fdde9e4945f92330179fd1639f525ad236ea2a665f286a9356dac8c72a",
+          "output": "SONAR N 1152921526081683474\nSONAR E 1152921526081683474\nSONAR S 1152921526081683474\nSONAR W 1152921526081683474\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31126298,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "toroidal_seam_visible_food",
+      "scope": "isolated legal local observation; no match",
+      "turns": [
+        {
+          "input_sha256": "c1d52bbe5e3af79e94bc73e526ec845b6dc7808248c270f87509bad0c7e86a53",
+          "output": "SONAR N 1152921572252581908\nSONAR E 1152921572252581908\nSONAR S 1152921572252581908\nSONAR W 1152921572252581908\nMOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31079317,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "c1d52bbe5e3af79e94bc73e526ec845b6dc7808248c270f87509bad0c7e86a53",
+          "output": "SONAR N 1152921572252581908\nSONAR E 1152921572252581908\nSONAR S 1152921572252581908\nSONAR W 1152921572252581908\nMOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 31001508,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    },
+    {
+      "name": "continuous_protocol2_to3_ring",
+      "scope": "successive legal body/position observations agree with each prior output",
+      "turns": [
+        {
+          "input_sha256": "c3ff935ce6ba4215222fb6f8f7ec2a27d7cd478a748f708d001d0c24b7ff23a9",
+          "output": "MOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 21000792,
+          "memory_bytes": 21561344,
+          "passed": true
+        },
+        {
+          "input_sha256": "a7975ccee0dd8a76d4ac2c0f80d4ae025d85c617891df3585d3e45af35d88bf9",
+          "output": "MOVE S\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 12841015,
+          "memory_bytes": 21626880,
+          "passed": true
+        },
+        {
+          "input_sha256": "78996434f4531f982d237ccf232d4858e155663d494c336aaa603582a39de70d",
+          "output": "MOVE W\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 12676668,
+          "memory_bytes": 21626880,
+          "passed": true
+        },
+        {
+          "input_sha256": "28cd81c8a6db71a425c1b00976c17f9df6ec7e6f895c0c1dd3ba762f9d68ec42",
+          "output": "MOVE N\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 12662966,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "fresh_child_protocol2_before_upgrade",
+      "scope": "protocol2 child of legacy parent; local view only",
+      "turns": [
+        {
+          "input_sha256": "f52014e84c0460772f6d6ae08d833b12c4fd6a7d399e7e59bf33b823d54ca3dc",
+          "output": "SONAR N 1152921527155425300\nSONAR E 1152921527155425300\nSONAR S 1152921527155425300\nSONAR W 1152921527155425300\nMOVE E\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 30987553,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "256_uint64_sonar_messages_budget",
+      "scope": "constructed protocol budget sample; no claim of a recorded real message distribution",
+      "turns": [
+        {
+          "input_sha256": "55e7a7f7659e13c5f1687ee7378e24eada11537ef2404b90c64236ca0c6e06a0",
+          "output": "SONAR N 1152921504606847016\nSONAR E 1152921504606847016\nSONAR S 1152921504606847016\nSONAR W 1152921504606847016\nMOVE S\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 60362814,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "original_turns": [
+        {
+          "input_sha256": "55e7a7f7659e13c5f1687ee7378e24eada11537ef2404b90c64236ca0c6e06a0",
+          "output": "SONAR N 1152921504606847016\nSONAR E 1152921504606847016\nSONAR S 1152921504606847016\nSONAR W 1152921504606847016\nMOVE S\nPROTOCOL 3\n",
+          "error": null,
+          "stderr": "",
+          "endturn_received": true,
+          "cpu_points": 60287005,
+          "memory_bytes": 21626880,
+          "passed": true
+        }
+      ],
+      "protocol3_outputs_identical": true
+    }
+  ],
+  "guest_bytecode_files": {
+    "helper.pyc": "f4cef6bc2b39b0844789a8208caf3639a22124c86a6e6b4959f7ce18fe65eb57",
+    "main.pyc": "c6e1273bfbd3de1a6df1d53a075b33a446b1e909647ae10b6692e65d245f02e7",
+    "main_actual_template.pyc": "2bac26625b74a9d7480b4a9f29167455a667233e2f038434c2d8942c6408c39a"
+  },
+  "passed": true,
+  "cases": 11,
+  "frames": 14,
+  "protocol3_comparisons": 8,
+  "max_measured_cpu_points": 60362814
+}

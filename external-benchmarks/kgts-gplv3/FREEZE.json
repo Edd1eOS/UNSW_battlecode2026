@@ -1,0 +1,29 @@
+{
+  "frozen_utc": "2026-10-07T05:10:06.510568+00:00",
+  "commit_sha": "b72ca9baac0e00071ac8013e238b01fe718d02b5",
+  "source_bundle_sha256": "a4b7f370b3bb794dd1436472d749eae96e1330e115d67d6f3b94771d37f87605",
+  "eligible": false,
+  "stop_reason": "Original source ineligible: initial protocol2 parser fails",
+  "python_interpreter_wasm_sha256": "48342178e7ca73775b90aacd0899efed906d79bff79b961360aefe76b5f78125",
+  "matches_run": 0,
+  "files": {
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "PROVENANCE.json": "66d85bdadb24513532e4d2a10552098cbfff570c5938c17a098a52bd45558305",
+    "README.local.md": "b4fa68597a3443875e6d59d42a7b9861b47d81b7317a3f482c5703d18959760c",
+    "README.md": "9f52182b5820c63438ac3761bdc13e9246f2ba3a0cab5ce2843286fdfe649d1c",
+    "README2.md": "f61f6ec812c68cb2a613a0a17366fccb5b73560700818c0d293a7504a880f58d",
+    "guest-bytecode/helper.pyc": "a644a4d1050165025c2c92d083ae1adaf8d58a3cf70e38226e80cddf485282dd",
+    "guest-bytecode/main.pyc": "c6e1273bfbd3de1a6df1d53a075b33a446b1e909647ae10b6692e65d245f02e7",
+    "guest-bytecode/main_actual_template.pyc": "2bac26625b74a9d7480b4a9f29167455a667233e2f038434c2d8942c6408c39a",
+    "ideas.md": "6430032739a5900190a3b9486a54692adb4aef58a002381b1e7c3bf6781cec89",
+    "retrieved-files.json": "020572484f84a5e5860ab2d64694620742fe4340d5262e89ae323f13a8ca29cb",
+    "smoke-fixtures.json": "4d8efe437749158e8114dbf14b80752f0811f984333dfb709f160963fc8c8120",
+    "smoke-results.json": "6dbb95695bc00333bcfdea94fad02dd989fc048dbbbad4a29c41423f969deafd",
+    "smoke.log": "e5e68ea47e02470e37c974e9572a2408a6b93a0b3e0a6adb010a6a4f4cd92e4c",
+    "smoke_kgts.py": "e587c062bdd52c42eb741f9fdb2da7e5fb275154e1cd3eb019f30dbe09b03285",
+    "source/bot.toml": "6ea1cbc15f4a72ace4442cf622b650a72c1a9e338024ef168939449cf4c3d532",
+    "source/helper.py": "344e5a5fb9b0e77102c052c7d4ea033dae5a76c05a3ae09992e3a1e291a6149a",
+    "source/main.py": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444",
+    "source/main_actual_template.py": "371a025598fe372c07ed76650146ac0e38118b97f07cbdd29e5701679c7553c4"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "recorded_utc": "2026-10-07T05:22:45.503080+00:00",
+  "scope": "Newly preregistered Active v14 external discovery reference, not candidate strength",
+  "active_submission_id": 15719,
+  "active_platform_version": 14,
+  "active_rating_observed": 1534,
+  "active_record_observed": {
+    "games": 1561,
+    "win": 787,
+    "draw": 0,
+    "loss": 774
+  },
+  "battle_type": "unranked",
+  "series_count": 3,
+  "maps_per_series": 17,
+  "games_planned": 51,
+  "manual_whole_round_maximum_amended": 102,
+  "rolling_hour_limit": 60,
+  "opponents": [
+    {
+      "team_id": 190,
+      "name": "risq-v",
+      "rating_observed": 1618
+    },
+    {
+      "team_id": 467,
+      "name": "STAR",
+      "rating_observed": 1679
+    },
+    {
+      "team_id": 1036,
+      "name": "very creative team name",
+      "rating_observed": 1848,
+      "previous_head_to_head_observed": 0
+    }
+  ],
+  "opponent_submission_ids": "unknown before request; verify actual replay metadata",
+  "ui_bindings": {
+    "test-results/oct7-online-baseline-active-ui.txt": {
+      "sha256": "8a418f62a7e809954c8ee38935f8ad7a436478722c2cc1e7e7795a1bd210b2a3",
+      "bytes": 21936
+    },
+    "test-results/oct7-online-baseline-star-ui.txt": {
+      "sha256": "40711b62ccfcdbd673e54e7975f2e2a67d4b18645580319a929f8b595cd38b7c",
+      "bytes": 4339
+    },
+    "test-results/oct7-online-baseline-novel-ui.txt": {
+      "sha256": "e45146f23cc07f98a00e81b4c50d3413f22078ed9e72778575f18e821e9a0822",
+      "bytes": 4393
+    },
+    "test-results/oct7-online-baseline-map-selection-ui.txt": {
+      "sha256": "9b2a48a93e16fd964ffb77889afc70429f62ed6817cfa1eab256a7e61d8ef851",
+      "bytes": 6827
+    }
+  },
+  "map_labels": [
+    "Around UNSW 64×64",
+    "Australia 64×64",
+    "Autarky 54×18",
+    "Default 32×32",
+    "Devil 32×16",
+    "Islands 56×40",
+    "Maze 48×24",
+    "Portals 32×16",
+    "Prisoners Dilemma 32×16",
+    "Queen Of Spades 25×35",
+    "Schooltime 60×40",
+    "Slithery Fight 63×27",
+    "Stripes 24×12",
+    "Tower Defense 32×16",
+    "Trauma 48×24",
+    "Trophy 25×25",
+    "weakhold 40×15"
+  ],
+  "series_request_order": [
+    1036,
+    190,
+    467
+  ],
+  "map_selection_verified_utc": "2026-10-07T05:23:29.243116+00:00",
+  "allowance_before_first_request": 60
+}

@@ -6,3 +6,7 @@ replays/
 test-results/
 dist/
 external-benchmarks/build-stages/
+external-benchmarks/*/upstream.git/
+external-benchmarks/*/guest-bytecode/
+external-benchmarks/*/*.log
+external-benchmarks/*/*.replay

@@ -1,0 +1,56 @@
+{
+  "repository_url": "https://github.com/Sumitforces/unsw-battlecode-kgts",
+  "commit_sha": "b72ca9baac0e00071ac8013e238b01fe718d02b5",
+  "license": "GPLv3",
+  "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "original_freeze_sha256": "09fa99af996c22ef93a420159c1695d6e0d83bc1fbc72e3944bc20cfc82ce356",
+  "original_provenance_sha256": "66d85bdadb24513532e4d2a10552098cbfff570c5938c17a098a52bd45558305",
+  "original_source_bundle_sha256": "a4b7f370b3bb794dd1436472d749eae96e1330e115d67d6f3b94771d37f87605",
+  "adapted_source_bundle_sha256": "256184b8b291638a9137dfc18465c392bb80dad0f4177c165c1eec488f6dc0fe",
+  "source_files": {
+    "bot.toml": {
+      "sha256": "6ea1cbc15f4a72ace4442cf622b650a72c1a9e338024ef168939449cf4c3d532",
+      "bytes": 47
+    },
+    "helper.py": {
+      "sha256": "179d6d17f910f7829978dc8fb23cd794ccc1088c2fb443d367842cba6d1a0095",
+      "bytes": 22724
+    },
+    "main.py": {
+      "sha256": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444",
+      "bytes": 8678
+    },
+    "main_actual_template.py": {
+      "sha256": "371a025598fe372c07ed76650146ac0e38118b97f07cbdd29e5701679c7553c4",
+      "bytes": 1021
+    }
+  },
+  "strategy_files_byte_identical": [
+    "main.py",
+    "main_actual_template.py",
+    "bot.toml"
+  ],
+  "adaptation": "Optional ECHOES parsing/first tile reuse; dated modification notice only",
+  "adaptation_patch_sha256": "4fe39e8c24dfdd8f449f9989e727957d7bd95403410590dfd3a858b26424b368",
+  "runtime": {
+    "kind": "python",
+    "argv": [
+      "python",
+      "main.py"
+    ],
+    "cwd": "source",
+    "bot_specific_wasm": null,
+    "python_interpreter_wasm_sha256": "48342178e7ca73775b90aacd0899efed906d79bff79b961360aefe76b5f78125",
+    "guest_bytecode_files": {
+      "helper.pyc": "f4cef6bc2b39b0844789a8208caf3639a22124c86a6e6b4959f7ce18fe65eb57",
+      "main.pyc": "c6e1273bfbd3de1a6df1d53a075b33a446b1e909647ae10b6692e65d245f02e7",
+      "main_actual_template.pyc": "2bac26625b74a9d7480b4a9f29167455a667233e2f038434c2d8942c6408c39a"
+    }
+  },
+  "protocol_passed": true,
+  "protocol_cases": 12,
+  "protocol_frames": 18,
+  "max_measured_cpu_points": 60362814,
+  "matches_run": 0,
+  "scope": "Independent external collection/message/split mechanism; unknown strength; GPL isolated from candidates/production"
+}

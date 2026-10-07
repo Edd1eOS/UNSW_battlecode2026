@@ -1,0 +1,102 @@
+{
+  "repository_url": "https://github.com/Sumitforces/unsw-battlecode-kgts",
+  "commit_sha": "b72ca9baac0e00071ac8013e238b01fe718d02b5",
+  "commit_date": "2026-09-25T23:58:38+05:30",
+  "retrieved_utc": "2026-10-07T05:10:06.509381+00:00",
+  "license": "GPLv3",
+  "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "isolation": "External-only GPL directory; no production/candidate source sharing",
+  "retrieval": "Bare clone, hooks disabled, git show fixed commit blobs; no checkout/script/filter execution",
+  "source_files_unchanged": true,
+  "source_bundle_sha256": "a4b7f370b3bb794dd1436472d749eae96e1330e115d67d6f3b94771d37f87605",
+  "files": [
+    {
+      "upstream_path": "LICENSE",
+      "local_path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/LICENSE"
+    },
+    {
+      "upstream_path": "README.md",
+      "local_path": "README.md",
+      "sha256": "9f52182b5820c63438ac3761bdc13e9246f2ba3a0cab5ce2843286fdfe649d1c",
+      "bytes": 2775,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/README.md"
+    },
+    {
+      "upstream_path": "README2.md",
+      "local_path": "README2.md",
+      "sha256": "f61f6ec812c68cb2a613a0a17366fccb5b73560700818c0d293a7504a880f58d",
+      "bytes": 4344,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/README2.md"
+    },
+    {
+      "upstream_path": "ideas.md",
+      "local_path": "ideas.md",
+      "sha256": "6430032739a5900190a3b9486a54692adb4aef58a002381b1e7c3bf6781cec89",
+      "bytes": 86,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/ideas.md"
+    },
+    {
+      "upstream_path": "bots/main/bot.toml",
+      "local_path": "source/bot.toml",
+      "sha256": "6ea1cbc15f4a72ace4442cf622b650a72c1a9e338024ef168939449cf4c3d532",
+      "bytes": 47,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/bot.toml"
+    },
+    {
+      "upstream_path": "bots/main/main.py",
+      "local_path": "source/main.py",
+      "sha256": "6d4faa341d2139d823786fba4cefd6a5c506939b02fd1b11efb7f8e65b13f444",
+      "bytes": 8678,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/main.py"
+    },
+    {
+      "upstream_path": "bots/main/helper.py",
+      "local_path": "source/helper.py",
+      "sha256": "344e5a5fb9b0e77102c052c7d4ea033dae5a76c05a3ae09992e3a1e291a6149a",
+      "bytes": 22161,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/helper.py"
+    },
+    {
+      "upstream_path": "bots/main/main_actual_template.py",
+      "local_path": "source/main_actual_template.py",
+      "sha256": "371a025598fe372c07ed76650146ac0e38118b97f07cbdd29e5701679c7553c4",
+      "bytes": 1021,
+      "url": "https://github.com/Sumitforces/unsw-battlecode-kgts/blob/b72ca9baac0e00071ac8013e238b01fe718d02b5/bots/main/main_actual_template.py"
+    }
+  ],
+  "audit": {
+    "all_bot_python_files_read": true,
+    "entrypoint": "source/main.py",
+    "imports": [
+      "helper (local)",
+      "random (stdlib)",
+      "collections.deque (stdlib)",
+      "sys (stdlib)",
+      "typing (stdlib)"
+    ],
+    "host_io_found": [
+      "protocol sys.stdin.readline",
+      "protocol sys.stdout.write/flush",
+      "sys.exit at EOF"
+    ],
+    "network_file_or_process_operations_found": false,
+    "upstream_host_execution": false,
+    "upstream_hooks_or_scripts_executed": false
+  },
+  "runtime": {
+    "kind": "python",
+    "bot_specific_wasm": null,
+    "python_interpreter_wasm_sha256": "48342178e7ca73775b90aacd0899efed906d79bff79b961360aefe76b5f78125",
+    "guest_bytecode_files": {
+      "helper.pyc": "a644a4d1050165025c2c92d083ae1adaf8d58a3cf70e38226e80cddf485282dd",
+      "main.pyc": "c6e1273bfbd3de1a6df1d53a075b33a446b1e909647ae10b6692e65d245f02e7",
+      "main_actual_template.pyc": "2bac26625b74a9d7480b4a9f29167455a667233e2f038434c2d8942c6408c39a"
+    }
+  },
+  "compatibility_passed": false,
+  "stop_reason": "Original source ineligible: initial protocol2 parser fails",
+  "matches_run": 0
+}
