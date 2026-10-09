@@ -2,6 +2,7 @@
 #include "strategy.hpp"
 #include <cmath>
 #include "terrain.hpp"
+#include "postmove_space.hpp"
 
 // v6：先选择有收益的目的地，再在可见区域内规划本回合的安全动作。
 // 所有记忆都来自自身视野；没有读取地图文件或对手隐藏状态。
@@ -30,7 +31,7 @@ inline std::vector<Direction> attack_queen(const Controller& ct,const Memory& m,
             int seen=0;
             for(const auto& body:ct.get_tiles())
                 if(body.get_dragon() && body.get_dragon()->get_id()==p->get_id()) ++seen;
-            if(seen>=ct.get_length()+(ct.get_unit_count()>=10?0:3)) value=seen;
+            if(seen>=ct.get_length()) value=seen;
         }
         if(value>best_value) {target=t.get_position();found=true;best_value=value;}
     }
@@ -218,7 +219,8 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
     if(ct.get_length()>state.old_length) state.last_growth=m.now;
     state.old_length=ct.get_length();
     const bool queen=ct.get_id()<=1;
-    if(!queen && ct.get_id()%4==2 && m.now>=70 && ct.get_unit_count()>=8) state.collector=true;
+    if(!queen && ct.get_id()%4==2 && m.now>=250 && ct.get_unit_count()>=8) state.collector=true;
+    if(queen && m.now<100 && ct.get_length()>=4 && ct.get_length()<=7 && ct.get_unit_count()<20 && ct.can_split(2) && nearby_threats(ct,ct.get_position())==0) return {{ct.get_dir(),2},{},"OCT8 QUEEN_BROOD"};
     const auto danger=danger_map(ct,m);
     const auto exits=terrain::build(ct,m);
     if(!queen) {
@@ -227,12 +229,33 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
         attack=attack_queen(ct,m,true);
         if(!attack.empty()) return {{attack.front(),0},attack,"V17 ATTACK_LARGE_WORKER"};
     }
+    // A worker acts after both Queens. Only strike heads that already acted,
+    // since the newborn acts at the end of this round from the old tail.
+    if(!queen && ct.can_split(2) && (int)m.body.size()==ct.get_length()
+       && nearby_threats(ct,ct.get_position())==0){
+        auto tail=m.body.back();
+        for(auto d:Direction::get_direction_list()){
+            Position n;if(!m.destination(ct,tail,d,n))continue;
+            auto t=ct.get_tile(n);auto p=t?t->get_dragon():nullptr;
+            if(!p || !p->is_head() || p->get_team()==ct.get_team() || p->get_id()>=ct.get_id())continue;
+            int seen=0;for(const auto& z:ct.get_tiles())if(z.get_dragon()&&z.get_dragon()->get_id()==p->get_id())++seen;
+            if(p->get_id()<=1 || seen>=3)return {{ct.get_dir(),2},{},"OCT8 TAIL_STRIKE"};
+        }
+    }
     const int goal=select_goal(ct,m,state,&exits);
     const auto field=goal>=0?distances(ct,m,position(m,goal),true):std::vector<int>(m.cells.size(),0);
-    Plan plan{{choose_move(ct,m),0},{},""};
+    const auto fallback_move=choose_move(ct,m);
+    Plan plan{{fallback_move,0},{},""};
     double best=-1e30; int explored=0; int best_viable=-1;
     Simulation initial{m.body,{},static_cast<int>(m.body.size())==ct.get_length(),ct.get_length()};
     if(initial.body.empty()) initial.body.push_back(ct.get_position());
+    std::vector<Evaluation> endpoint_cache(m.cells.size());
+    std::vector<bool> endpoint_cached(m.cells.size(),false);
+    auto endpoint_evaluate=[&](Position p)->Evaluation {
+        const int i=m.index(p);
+        if(!endpoint_cached[i]) {endpoint_cache[i]=evaluate(ct,p,&m);endpoint_cached[i]=true;}
+        return endpoint_cache[i];
+    };
     std::vector<Direction> path;
     // 最多四步，全为回合开始长度所允许的免费动作，不靠吃珍珠增加免费额度。
     const int free_steps=(ct.get_length()+3)/4;
@@ -252,7 +275,7 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             int budget=queen?220:110; auto future=search_survival(ct,next,0,horizon,budget,&m);
             const int viable=future.depth>=horizon || future.uncertain;
             int safety=future.depth>=6?2:((future.uncertain && future.depth>=2)?2:0);
-            auto e=evaluate(ct,end,&m);
+            auto e=postmove_space::evaluate_after(ct,m,next);
             double score=static_cast<int>(next.eaten.size())*(queen || state.collector?175.0:(ct.get_length()==3?230.0:(ct.get_length()==2?150.0:105.0)));
             score-=goal>=0?12.0*std::min(field[m.index(end)],100):0;
             score-=danger[m.index(end)]*(queen?1800.0:(state.collector?300.0:(ct.get_length()<=2?75.0:(ct.get_length()==3?120.0:170.0))));
@@ -277,7 +300,6 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
             Position out;
             if(!here->get_edge(d).is_portal() || !m.destination(ct,ct.get_position(),d,out)
                || !m.cell(out) || ct.get_tile(out)) continue;
-            if(std::find(m.body.begin(),m.body.end(),out)!=m.body.end()) continue;
             if(field[m.index(out)]+1>field[m.index(ct.get_position())]) continue;
             if(exits.worsens(m,ct.get_position(),out)) continue;
             const auto& c=*m.cell(out);
@@ -291,7 +313,7 @@ inline Plan choose(const Controller& ct, Memory& m, State& state) {
         }
     }
     // 先保留可靠的紧急救援，再加上工兵的正常扩张。
-    auto rescue=choose_action(ct,m,m.now,false);
+    auto rescue=choose_action(ct,m,m.now,false,{},&fallback_move);
     if(rescue.child_size) {plan.action=rescue;plan.moves.clear();return plan;}
     int child=0;
     if(ct.can_split(2) && static_cast<int>(m.body.size())==ct.get_length()

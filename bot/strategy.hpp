@@ -358,8 +358,8 @@ struct Decision {
 // v4：Queen 留长度，工兵扩张。分裂本回合不移动，所以头部也要安全。
 inline Decision choose_action(const Controller& ct, const Memory& memory, int round,
                               bool allow_expansion = true,
-                              const std::array<double,4>& adjustment = {}) {
-    Decision action{choose_move(ct, memory, adjustment), 0};
+                              const std::array<double,4>& adjustment = {}, const Direction* cached_move = nullptr) {
+    Decision action{cached_move ? *cached_move : choose_move(ct, memory, adjustment), 0};
     const bool queen = ct.get_id() <= 1;
     Position target;
     const bool resolved = memory.destination(ct, ct.get_position(), action.direction, target);
